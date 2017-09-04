@@ -1,0 +1,23 @@
+/*keepFooterDownStyles*/
+html {
+	height: 100%;
+
+	body {
+		height: 100%;
+		/*the following wrapper body and footer code keeps the footer at the bottom*/
+		.wrapper {
+			min-height: 100%;
+			position:relative;
+		}
+		.body {
+			padding-bottom: 198px;
+		}
+		.footerComponent {
+			position:absolute;
+			bottom:0;
+			width:100%;
+			height:198px;
+			overflow: hidden;
+		}
+	}
+}

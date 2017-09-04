@@ -1,0 +1,24 @@
+<div class="headerComponent" ng-controller="HeaderController as vm">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="index.guest.ftv.home">
+          <img alt="Brand" src="/modules/ffmedia/client/assets/img/logo.png">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+          <li>
+            <a href="" target="_self" ui-sref="index.admin.user.account.editProfile">Account</a>
+          </li>
+          <li>
+            <a href="" target="_self" ng-click="vm.signout()">Signout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+</div>

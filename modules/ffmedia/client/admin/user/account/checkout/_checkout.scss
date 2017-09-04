@@ -1,0 +1,146 @@
+.checkoutView {
+
+  /*-- START fest-admin-films-create page -- Jose
+  ================================================== --*/
+
+
+  .container-fluid {
+    max-width: 1200px;
+  }
+
+  .pad-0 {
+    padding: 0;
+  }
+  .pad-05 {
+    padding: 0 0 0 5px;
+  }
+
+  .btn-default {
+    text-shadow: 0 1px 0 $white;
+    background-image: -webkit-linear-gradient(top, $white 0, $greyE 100%);
+    background-image: -o-linear-gradient(top, $white 0, $greyE 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to($greyE));
+    background-image: linear-gradient(to bottom, $white 0, $greyE 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white-ie-filter', endColorstr='$greyE-ie-filter', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: $greyC;
+    width: 100%;
+  }
+
+  .btn-warning {
+    border-radius: 15px;
+  }
+
+  .btn-default.radius-right {
+    padding: 6px 50px;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .back-btn {
+    border-radius: 15px;
+  }
+
+  /* -- Well setting Jose -- */
+
+  .terms-conditions {
+    font-size: 8px;
+  }
+
+  .section-title {
+    text-transform: uppercase;
+  }
+
+  .tickets.ffm-well {
+    min-height: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: $white;
+    border: 0;
+  }
+
+  /* -- Well setting Jose -- */
+
+  /* -- Accordion -- */
+
+  p {
+    margin: 10px;
+  }
+
+  h4 {
+    margin-left: 10px;
+  }
+
+  .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+  }
+
+  .form-control {
+    border-radius: 15px 0 0 15px;
+  }
+
+  .control-label {
+    padding-right: 0;
+  }
+
+  .checkout-form {
+    padding-top: 1em;
+    
+    .form-control {
+      border-radius: 15px;
+    }
+
+    .pull-right > .pull-right {
+      margin-left: 5px;
+    }
+
+    .back-btn {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  .bootstrap-select.btn-group .btn .caret {
+    float: right;
+  }
+
+  .orange-txt {
+    color: $orangeF;
+  }
+
+  .flow h4 {
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid $orangeF;
+
+    span {
+      color: $black;
+      font-family: $mediumFont;
+      padding: 0.5em 1em;
+      @include radius(5px 5px 0 0);
+      cursor: pointer;
+
+      &.active {
+        color: $white;
+        background-color: $orangeF;
+      }
+    }
+
+  }
+
+  .thank-message {
+    font-weight: normal;
+    font-family: $mediumFont;
+    padding-left: 15px;
+
+    a {
+      color: $orangeF;
+    }
+  }
+
+  /* -- Accordion -- */
+
+  /*-- END fest-admin-films-create page -- Jose*/
+
+
+}

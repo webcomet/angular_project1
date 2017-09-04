@@ -1,0 +1,114 @@
+<div class="filmView container-fluid container-first">
+
+  <!-- Main container -->
+  <div class="container-fluid mag-top-25">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div id="thumbnail-view" ng-hide="vmFilm.showPlayer">
+                <a href="/admin/festival//films/create-update/{{vmFilm.video._id}}">
+                  <img class="img-rounded img-responsive" width="360" src="{{vmFilm.video.thumbnailS3url}}" ng-show="vmFilm.video.thumbnailS3url"/>
+                  <img class="img-rounded img-responsive" width="360" src="/modules/ffmedia/client/assets/img/no-thumbnail.jpg" ng-hide="vmFilm.video.thumbnailS3url"/>
+                </a>
+              </div>
+              <!-- Player Modal Dialog -->
+              <script type="text/ng-template" id="FilmPlayerModal.html">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="film-modal-title">Film Player</h3>
+                </div>
+                <div class="modal-body" id="film-modal-body" style="height: 600px">
+                  <iframe name="film-player" width="100%" height="100%" src=""
+                          allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </script>
+              <!-- Player Modal Dialog -->
+            </div>
+            <div class="col-sm-6 col-md-8">
+              <div class="row">
+                <div class="col-md-6 mag-top-10 mag-btm-25">
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-12 glyph-Column" ng-show="vmFilm.video.teaserID">
+                      <ul>
+                        <li> CATEGORY </li>
+                        <li> <a href="{{vmFilm.getTeaserPlayerLocation()}}"
+                                target="film-player" ng-click="vmFilm.openFilmPlayer()">
+                          <img class="img-responsive center-block img-rounded" src="/modules/ffmedia/client/assets/img/fftv-glyphs/fftv-play.png"></a> </li>
+                        <li> TRAILER </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 glyph-Column">
+                      <ul>
+                        <li> {{vmFilm.getVideoDuration()}} </li>
+                        <li> <a href=""><img class="img-responsive center-block img-rounded" src="/modules/ffmedia/client/assets/img/fftv-glyphs/fftv-plane.png"></a> </li>
+                        <li> CONTACT FILMMAKER </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <button type="button" class="btn btn-block btn-warning"> NAPA </button>
+                  <button type="button" class="btn btn-block btn-success"> NORTHWEST </button>
+                  <button type="button" class="btn btn-block btn-default"> BUY A PASS </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mag-top-10">
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p>Narrative: {{vmFilm.video.featureNarrative}}</p>
+                  <p>Synopsis: {{vmFilm.video.synopsis}}</p>
+                  <p class="title-orange"> CAST/CREW <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></p>
+                  <p>Cast: {{vmFilm.video.cast}}</p>
+                  <p>Director: {{vmFilm.video.director}}</p>
+                  <p>Writer: {{vmFilm.video.writer}}</p>
+                  <p>Producer: {{vmFilm.video.producer}}</p>
+                  <p>Editor: {{vmFilm.video.editor}}</p>
+                  <p>Cinematographer: {{vmFilm.video.cinematographer}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12-lg">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-md-12"><h3>Recommended</h3></div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+          <div class="col-lg-2 col-xs-2"> <a href=""> <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt=""> </a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- /End Main container -->
+
+
+
+
+
+</div>

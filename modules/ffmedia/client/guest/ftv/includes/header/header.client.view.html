@@ -1,0 +1,13 @@
+<div class="headerComponent" ng-controller="HeaderController as vmHeader">
+    <nav class="header-menu" ng-class="{active: vmHeader.showMenu}" ng-mouseleave="vmHeader.showMenu = false;">
+        <ul class="header-menu-list">
+            <li class="header-menu-item"><a href="#" ui-sref="index.guest.ftv.about">About</a></li>
+            <li class="header-menu-item"><a href="#">Get A Free Month</a></li>
+            <li class="header-menu-item"><a href="#" ui-sref="index.guest.ftv.ways-to-stream">Ways To Stream</a></li>
+            <li class="header-menu-item"><a href="#">Coming Soon</a></li>            
+            <li class="header-menu-item"><a href="#" ui-sref="index.guest.ftv.faq">FAQ</a></li>
+            <li class="header-menu-item"><a ui-sref="index.guest.ffm.home">FESTV/MEDIA</a></li>
+        </ul>
+    </nav>
+    <div class="header-container" ng-include="'/modules/ffmedia/client/guest/includes/header/header.client.view.html'"></div>
+</div>

@@ -1,0 +1,7 @@
+.filmsView {
+	@import 'films/films';
+	@import 'create-update/create-update';
+	@import 'collections/collections';
+	@import 'invite/invite';
+	@import 'submissions/submissions';
+}

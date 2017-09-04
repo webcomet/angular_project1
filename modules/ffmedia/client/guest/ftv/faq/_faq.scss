@@ -1,0 +1,24 @@
+.faqView {
+
+  .article-container {
+    display: flex;
+    p {
+      padding-bottom: 1.3em;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    strong {
+      display: block;
+    }
+
+    .email-link {
+      font-weight: bold;
+      color: $highlightColor;
+    }
+  }
+
+}
+

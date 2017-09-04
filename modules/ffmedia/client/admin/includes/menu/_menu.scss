@@ -1,0 +1,115 @@
+.menuComponent {
+  font-family: 'gothammed', sans-serif;
+
+  .menu-toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    
+    > span {
+      padding: 16px 24px;
+      color: #FFFFFF;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.4s linear;
+
+      &:hover, &.active {
+        background: #FAFAFA;
+        color: black;
+      } 
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    padding-top: 0.5em;
+    background: #E0E0E0;
+    z-index: 10;
+    transform: translateX(-105%);
+    transition: transform 0.4s ease;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .menu--first {
+
+      .menu-item {
+        text-transform: uppercase;
+        border-bottom: 2px solid #888888;
+
+        a {
+          display: block;
+          padding: 0.5em 3em 0.5em 24px;
+          color: black;
+          text-decoration: none;
+        }
+
+        &:hover {
+          background: $greyB;
+
+          .menu--second {
+            width: 200px;
+            z-index: 10;
+          }
+        }
+
+        @mixin submenu {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          padding-top: 0.5em;
+          overflow: hidden;
+          white-space: nowrap;
+          z-index: 5;
+        }
+
+        .menu--second {
+          @include submenu;
+          left: 100%;
+          background: $greyB;
+          transition: width 0.25s linear;
+
+          > .menu-item {
+
+            > .menu--third {
+              @include submenu;
+              left: calc(100% + 200px);
+              background: $greyDefault;
+
+              > .menu-item > a {
+                color: $white;
+              }
+
+              > .menu-item:hover {
+                  background: $grey4;
+              }
+            }
+
+            a {
+              color: $white;
+            }
+
+            &:hover {
+              background: $greyDefault;
+
+              .menu--third {
+                width: 250px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

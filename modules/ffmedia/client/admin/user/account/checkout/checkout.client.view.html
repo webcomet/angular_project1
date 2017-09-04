@@ -1,0 +1,190 @@
+<div class="checkoutView">
+<!-- Main container -->
+<div class="container-fluid">
+  <div class="flow row">
+    <h4 class="col-md-12">
+      <span ng-click="checkout.pageFlow='address'" ng-class="{'active': checkout.pageFlow=='address'}">1. Address</span>
+      <span ng-click="checkout.pageFlow='payment'" ng-class="{'active': checkout.pageFlow=='payment'}">2. Payment</span>
+      <span ng-click="checkout.pageFlow='review'" ng-class="{'active': checkout.pageFlow=='review'}">3. Review</span>
+    </h4>
+  </div>
+  <div class="address" ng-show="checkout.pageFlow == 'address'">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Checkout: Billing Address</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pad-0">
+        <div class="quantity ffm-well row">
+          <form class="checkout-form form-horizontal col-md-10">
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="address1">Address Line 1</label>  
+              <div class="col-md-10">
+                <input id="address1" name="address1" type="text" class="form-control input-md" required="">
+                <span class="help-block">Street address, P.O. box, company name, c/o</span>  
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="address2">Address Line 2</label>  
+              <div class="col-md-10">
+                <input id="address2" name="address2" type="text" class="form-control input-md">
+                <span class="help-block">Apartment, suite, unit, building, floor, etc.</span>  
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="city">City/Town</label>  
+              <div class="col-md-10">
+                <input id="city" name="city" type="text" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="zip">Zip/Postal Code</label>  
+              <div class="col-md-4">
+                <input id="zip" name="zip" type="text" class="form-control input-md" required="">      
+              </div>
+              <label class="col-md-2 control-label" for="State">State/Province</label>  
+              <div class="col-md-4">
+                <input id="State" name="State" type="text" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Country">Country</label>
+              <div class="col-md-10">
+                <select id="Country" name="Country" class="form-control">
+                  <option value="USA">United States</option>
+                  <!--Needs Populating, probably a fast way to do this-->
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <div class="pull-right col-md-4 row">
+                  <button type="submit" ng-click="checkout.pageFlow='payment'" class="btn btn-warning btn-block">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="payment" ng-show="checkout.pageFlow == 'payment'">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Checkout: Payment Method</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pad-0">
+        <div class="quantity ffm-well row">
+            <form class="checkout-form form-horizontal col-md-10">
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="cardholder">Name on Card</label>  
+              <div class="col-md-10">
+                <input id="cardholder" name="cardholder" type="text" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="cardNo">Card No.</label>  
+              <div class="col-md-10">
+                <input id="cardNo" name="cardNo" type="number" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="secCode">Security Code</label>  
+              <div class="col-md-4">
+                <input id="secCode" name="secCode" type="number" class="form-control input-md" required="">      
+              </div>
+              <label class="col-md-2 control-label" for="expiry">Expiry Date</label>  
+              <div class="col-md-4">
+                <input id="expiry" name="expiry" type="date" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <div class="pull-right col-md-6 row">
+                  <button type="submit" ng-click="checkout.pageFlow='review'" class="pull-right btn btn-warning">Confirm</button>
+                  <button ng-click="checkout.pageFlow='address'" class="pull-right btn back-btn">Back</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="review" ng-show="checkout.pageFlow=='review'">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Checkout: Review Order</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 pad-0">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-4 pad-0">
+              <div class="tickets ffm-well"> <img class="img-responsive img-rounded center-block" src="/modules/ffmedia/client/assets/img/subscriber-shoppingcart.jpg" /> </div>
+            </div>
+            <div class="col-md-8 pad-05">
+              <div class="quantity ffm-well">
+                <h4> NAPA VALLEY FILM FESTIVAL 2016 </h4>
+                <p>PRICE: <span class="orange-txt">$6,000</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-4 pad-0">
+              <div class="tickets ffm-well"> <img class="img-responsive img-rounded center-block" src="/modules/ffmedia/client/assets/img/subscriber-shoppingcart.jpg" /> </div>
+            </div>
+            <div class="col-md-8 pad-05">
+              <div class="quantity ffm-well">
+                <h4> SLO FF 2016 </h4>
+                <p>PRICE: <span class="orange-txt">$6,000</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- col-md-8  -->
+      <div class="col-md-4 pad-0">
+        <div class="col-md-12">
+          <div class="quantity ffm-well">
+            <button type="button" class="btn btn-block btn-warning" ng-click="checkout.pageFlow='thank'">PLACE YOUR ORDER</button>
+            <button type="button" class="btn btn-block back-btn" ng-click="checkout.pageFlow='payment'">BACK</button>              
+            <P class="terms-conditions">IN PLACING YOUR ORDER. YOU AGREE TO FTVS PRIVACY NOTICE AND CONDTIONS OF USE</P>
+            <div class="form-group ffm-well-gray">
+              <div class="order-summary">
+                <h4>ORDER SUMMARY</h4>
+                <p>ITEMS SUBTOTAL: <span class="orange-txt">$12,000</span></p>
+                <p>MINUS DISCOUNT: <span class="orange-txt">$12,000</span></p>
+              </div>
+            </div>
+            <div class="form-group ffm-well-col">
+              <div class="order-summary">
+                <p>ORDER TOTAL: <span class="orange-txt">$0</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="thank" ng-show="checkout.pageFlow == 'thank'">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Thank You</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pad-0">
+        <h2 class="thank-message">Your order has been received. Have a look at your <a ui-sref="index.admin.user.account.purchases">Purchases</a>.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- /End Main container -->

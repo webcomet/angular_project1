@@ -1,0 +1,226 @@
+<div class="createUpdateView container-fluid" ng-controller="AdminFestivalTicketUpdate as vmTicketUpdate">
+
+
+<!-- Title Bar -->
+<div class="container-fluid title-bar">
+  <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-lg-9 col-sm-8 col-xs-6">
+          <h3 class="font-ca">
+              TICKETS > CREATE UPDATE
+          </h3>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <div class="row">
+                <div class="col-md-12 mag-top-10">
+                  <table>
+                    <tr><td>
+                      <a type="button"
+                              ng-click="vmTicketUpdate.saveTicket(vmTicketUpdate.ticket)"
+                              class="btn btn-warning right" title="Save Ticket"
+                              ng-show="vmTicketUpdate.showSavePreviewButton || vmTicketUpdate.ticketForm.$dirty"
+                              ng-hide="vmTicketUpdate.processing">
+                              SAVE
+                      </a>
+                      <a type="button" class="btn btn-grey right"  ng-show="vmTicketUpdate.processing">
+                        <i class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+                      </a>
+                    </tr></td>
+                  </table>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- /End Title Bar -->
+
+
+
+<!-- Main container -->
+<div class="container-fluid films-create">
+  <form name="vmTicketUpdate.ticketForm">
+    <div class="container-fluid ffm-well">
+      <div class="col-lg-12">
+        <h4 class="mag-left-10">TICKET TITLE</h4>
+        <div class="row">
+          <div class="col-sm-8 col-xs-8 form-group">
+            <input type="text" placeholder="NAPA VALLEY FILM FESTIVAL 2016" equired name="title" class="form-control form-group" ng-model="vmTicketUpdate.ticket.title">
+            <div class="box">
+              <div class="upload-drop-zone-film" ng-hide="vmTicketUpdate.ticket.thumbnail">
+                <p>Ticket Thumbnail</p>
+              </div>
+              <div class="preview">
+                <img ng-if='vmTicketUpdate.ticket.thumbnail'
+                  class="previewImg"
+                  ng-class="{imgopacity: vmTicketUpdate.uploading.ticket}"
+                  ng-src="{{vmTicketUpdate.ticket.thumbnail}}"
+                  title="Update Banner"
+                />
+                <span ng-show="vmTicketUpdate.uploading.ticket">
+                  <i class="fa fa-circle-o-notch fa-spin loader" style="font-size:48px"></i>
+                </span>
+              </div>
+              <span class="caption fade-caption">
+                <div class="dashed-border"
+                  ng-model="vmTicketUpdate.ticket.file"
+                  ngf-drop="vmTicketUpdate.uploadThumbnail($file, 'ticket-thumbnail')"
+                  ngf-select="vmTicketUpdate.uploadThumbnail($file, 'ticket-thumbnail')"
+                  ngf-drag-over-class="'dragover'"
+                  ngf-multiple="false"
+                  ngf-allow-dir="false"
+                  accept="image/*"
+                  ngf-pattern="'image/*'"
+                  ng-hide="vmTicketUpdate.ticket.thumbnail || vmTicketUpdate.uploading.ticket">
+                  <p>Drop or Click to Upload Your Ticket Thumbnail</p>
+                </div>
+              </span>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group ffm-well-col">
+              <h4>TICKET TYPE</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group bootstrap-select" uib-dropdown style="width: 100%;">
+                    <button type="button" class="btn dropdown-toggle btn-default btn-block margin-bottom"
+                      title="Select Ticket Type"
+                      ng-model="vmTicketUpdate.ticket.ticketType"
+                      uib-dropdown-toggle
+                      ng-disabled="disabled">
+                      <span class="filter-option pull-left">{{ vmTicketUpdate.ticket.ticketType || 'Select Ticket Type' }} </span>&nbsp;<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu inner selectpicker" role="menu" style="overflow-y: auto; min-height: 0px;">
+                      <li role="menuitem">
+                        <a href="#" ng-click="vmTicketUpdate.changeType(type)" ng-repeat="type in vmTicketUpdate.types">{{type}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <table>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="publicPurchase" id="checkboxG1" class="css-checkbox"
+                      ng-model="vmTicketUpdate.ticket.publicPurchase"
+                      ng-hide="vmTicketUpdate.ticket.ticketType=='VIP'"
+                      checked="checked"/>
+                    <label for="checkboxG1" class="css-label"
+                      ng-hide="vmTicketUpdate.ticket.ticketType=='VIP'">
+                      FOR PUBLIC PURCHASE
+                    </label>
+                  </td>
+                </tr>
+              </table>
+              <span class="css-label"
+                ng-hide="vmTicketUpdate.ticket.ticketType=='Subscription'">
+                START DATE
+              </span>
+              <div class="row">
+                <div class="col-md-12 btn-group bootstrap-select">
+                  <button type="button" class="btn dropdown-toggle selectpicker btn-default btn-block margin-bottom"
+                    title="Start Date"
+                    ng-model="vmTicketUpdate.ticket.startDate"
+                    is-open="vmTicketUpdate.startDatePicker.opened"
+                    uib-datepicker-popup="{{vmTicketUpdate.format}}"
+                    datepicker-options="dateOptions"
+                    ng-click="vmTicketUpdate.openStartDatePicker()"
+                    ng-hide="vmTicketUpdate.ticket.ticketType=='Subscription'">
+                    <span class="filter-option pull-left">{{vmTicketUpdate.ticket.startDate| date : 'y-M-d' || 'Start Date'}}</span>&nbsp;<span class="caret"></span>
+                  </button>
+                </div>
+              </div>
+              <span class="css-label"
+                ng-hide="vmTicketUpdate.ticket.ticketType=='Subscription'">
+                END DATE
+              </span>
+              <div class="row">
+                <div class="col-md-12 btn-group bootstrap-select">
+                  <button type="button" class="btn dropdown-toggle selectpicker btn-default btn-block margin-bottom"
+                    title="End Date"
+                    ng-model="vmTicketUpdate.ticket.endDate"
+                    is-open="vmTicketUpdate.endDatePicker.opened"
+                    uib-datepicker-popup="{{vmTicketUpdate.format}}"
+                    datepicker-options="dateOptions"
+                    ng-click="vmTicketUpdate.openEndDatePicker()"
+                    ng-hide="vmTicketUpdate.ticket.ticketType=='Subscription'">
+                    <span class="filter-option pull-left">{{vmTicketUpdate.ticket.endDate | date : 'y-M-d' || 'End Date'}}</span>&nbsp;<span class="caret"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-8 col-xs-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="mag-left-10">PRICE</h4>
+                  <input type="text" name="price" placeholder="$60.99" class="form-control form-group" ng-model="vmTicketUpdate.ticket.price">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="mag-left-10">TAGS</h4>
+                  <input type="text" name="tags" placeholder="Year 2016" class="form-control form-group" ng-model="vmTicketUpdate.ticket.tags">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                   <h4 class="mag-left-10">TICKET DESCRIPTION</h4>
+                  <input type="text" name="description" placeholder="Ticket description" class="form-control form-group synopsis-height" ng-model="vmTicketUpdate.ticket.description">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid filmmakers-table">
+            <div class="row">
+              <div class="col-sm-8 ffm-well-gray">
+                <h4>TICKET HOLDERS</h4>
+                <div class="table-responsive">
+                  <table class="mytable table table-responsive table-hover table-striped table-ffm">
+                    <thead>
+                    <th class="corners-left">EMAIL</th>
+                      <th class="center">DATE  COMPLETED</th>
+                      <th class="corners-right">ACTIONS</th>
+                      </thead>
+                    <tbody>
+                      <tr>
+                        <td class="corners-left">some@filmmaker.com</td>
+                        <td align=center>08/01/2016</td>
+                        <td class="corners-right">
+                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >Remove</button>
+                         </td>
+                      </tr>
+                      <tr>
+                        <td class="corners-left">some@filmmaker.com</td>
+                        <td align=center>08/01/2016</td>
+                        <td class="corners-right">
+                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >Remove</button>
+                         </td>
+                      </tr>
+                      <tr>
+                        <td class="corners-left">some@filmmaker.com</td>
+                        <td align=center>08/01/2016</td>
+                        <td class="corners-right">
+                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >Remove</button>
+                         </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<!-- /End Main container -->
+
+
+</div>

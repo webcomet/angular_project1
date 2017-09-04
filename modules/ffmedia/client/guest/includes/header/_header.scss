@@ -1,0 +1,111 @@
+.headerComponent {
+    font-family: 'gothammed', sans-serif;
+    padding: 0 1em 0 0;
+    color: $white;
+
+    .header-menu {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding-top: 0.5em;
+      background: $white;
+      @include radius(0 0.5em 0.5em);
+      transform: translateX(-105%);
+      transition: transform 0.4s ease;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      .header-menu-list {
+        padding: 0;
+        list-style: none;
+
+        .header-menu-item {
+          position: relative;
+          text-transform: uppercase;
+
+          a {
+            display: block;
+            padding: 0.5em 3em 0.5em 24px;
+            color: black;
+            text-decoration: none;
+          }
+
+          .header-submenu {
+            @extend .header-menu-list;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            background: $greyB;
+            z-index: 5;
+            @include radius(0 0.3em 0.3em 0);
+            transition: max-width 0.2s linear;
+
+            .header-menu-item:hover {
+              background: $greyDefault;
+            }
+
+            .header-menu-item > a {
+              color: $white;
+            }
+          }
+
+          &:hover {
+            background: $greyB;
+
+            .header-submenu {
+              max-width: 250px;
+              z-index: 10;
+            }
+          }
+        }
+      }
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+
+      .header-left, .header-right {
+        display: flex;
+        align-items: center;
+
+        .header-menu-toggle {
+          padding: 16px 24px;
+          transition: background 0.4s linear;
+          cursor: pointer;
+
+          &:hover, &.active {
+            background: $white;
+            color: black;
+          } 
+        }
+
+        .header-title {
+          font-size: 1.1em;
+          margin-left: 1em;
+        }
+
+        .header-account {
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: 1.1em;
+        }
+
+        .header-bar {
+          width: 2px;
+          height: 2em;
+          margin: 0 1em;
+          background: $white;
+        }
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }

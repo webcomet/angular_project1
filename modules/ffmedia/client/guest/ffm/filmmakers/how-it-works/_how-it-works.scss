@@ -1,0 +1,221 @@
+.how-it-worksView {
+  text-align: center;
+  color: $white;
+  background: url('/modules/ffmedia/client/assets/img/day-town.jpg') center/cover no-repeat;
+  padding-top: 10vh;
+
+  @media #{$breakpointTablet} {
+    padding-top: 0;
+  }
+
+  .highlight {
+    color: $highlightColor;
+    font-family: $mediumFont;
+  }
+
+  .strong {
+    font-family: $boldFont;
+  }
+
+  > .container-fluid {
+    margin: 0;
+    padding: 0;
+
+    .top {
+      padding: 60px 25% 0 25%;
+
+      @media #{$breakpointTabletLandscape} {
+        padding: 60px 2em 0 2em;
+      }
+
+      @media #{$breakpointTablet} {
+        padding: 60px 1em 0 1em;
+      }
+
+      .top-title {
+        font-size: 3.5em;
+        margin: 0 0 1em;
+
+        > span {
+          font-family: $boldFont;
+        }
+      }
+
+      p {
+        font-size: 1.2em;
+        margin: 2em 0;
+      }
+
+      .top-black {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 1em;
+        background-color: black;
+        @include radius(1em);
+
+        p {
+          margin: 1em 0 0;
+          &:first-of-type {
+            margin: 0;
+            font-family: $mediumFont;
+          }
+        }
+      }
+    }
+
+    .benefits {
+      margin: 3.5em auto;
+      width: 90%;
+      max-width: 850px;
+      @include radius(10px);
+      font-size: 1.3em;
+      font-family: $mediumFont;
+      text-transform: uppercase;
+
+      .benefits-heading {
+        background: $grey3;
+        padding: 0.5em;
+        margin: 0;
+        border-radius: 10px 10px 0 0;        
+      }
+
+      .benefits-list {
+        list-style: none;
+        padding: 0;
+
+        > li {
+          text-align: left;
+          background: $grey4;
+          &:nth-of-type(2n) {
+            background: $grey6;
+          }
+          &:last-of-type {
+            border-radius: 0 0 10px 10px;
+          }
+
+          span {
+            display: flex;
+            align-items: center;
+            
+            &::before {
+              content: '';
+              background: url('/modules/ffmedia/client/assets/img/check-mark.png');
+              height: 75px;
+              flex: 0 0 80px;
+            }
+          }
+        }
+      }
+    }
+
+    .payment-cover {
+      background: url('/modules/ffmedia/client/assets/img/filmmakers-cartoon.jpg') center/cover no-repeat;
+      margin-top: 2em;
+      // Adds a black line in between the sections to avoid background images clashing.
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2em;
+        background: black;
+      }
+
+      .payment {
+        width: 90%;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 5em 0 3em;
+        text-transform: uppercase;
+
+        .highlight {
+          font-family: inherit;
+        }
+
+        .payment-heading {
+          margin: 0;
+          font-size: 2.5em;
+          font-family: $boldFont;
+        }
+
+        .payment-filmmakers {
+          margin: 2em 0 1.5em;
+          font-size: 2em;
+          font-family: $boldFont;
+        }
+
+        .payment-terms {
+          margin: 1.5em 0;
+          font-size: 1.3em;
+
+          &::before {
+            content: '*';
+            margin-right: 1em;
+          }
+        }
+      }      
+    }
+
+    .bottom {
+      padding: 1.5em 0;
+      background: black;
+      
+      .indie-filmmakers {
+        max-width: 850px;
+        width: 90%;
+        margin: 0 auto;
+        font-family: $mediumFont;
+        font-size: 1.75em;
+      }
+
+      .bottom-image {
+        display: block;
+        margin: 2em auto;
+      }
+
+      .action {
+        background: $grey4;
+        display: block;
+        text-align: center; 
+        text-transform: uppercase;
+        width: 90%;
+        margin: 0 auto;
+        padding: 1em 0;
+        border-radius: 1em;
+
+        .action-image {
+          height: 75px;
+          margin: 0 0.5em;
+        }
+
+        .action-heading {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+        }
+
+        .action-button {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0.5em 0 0.5em 1em;
+          padding: 0.25em 1em;
+          background: #FFFF00;
+          border: none;
+          border-radius: 1em;
+          font-family: $boldFont;
+          font-size: 1.7em;
+          color: $grey4;
+          text-transform: uppercase;
+
+          &:hover, &:focus {
+            background: #FFFF77;
+            outline: none;
+          }
+          &:active {
+            background: #FFEE44;
+          }
+        }
+      }
+    }
+  }
+}

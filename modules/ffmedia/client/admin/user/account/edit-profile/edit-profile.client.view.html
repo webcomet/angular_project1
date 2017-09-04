@@ -1,0 +1,105 @@
+<div class="editProfile container-fluid">
+	<!-- Title Bar --> 
+	<div class="container-fluid title-bar">
+		<div class="ffm-well">
+			<div class="row">
+				<div class="col-lg-9 col-sm-8">
+					<h3 class="font-ca">
+						Edit Profile
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /End Title Bar -->
+	<div class="container-fluid title-bar" ng-controller="AdminEditProfileController as editProfile">
+		<div class="ffm-well">
+			<div class="row">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="actions">
+							<span class="btn btn-danger" title="" href=""
+								ng-show="!editProfile.user.saving"
+								ng-click="editProfile.saveProfile(editProfile.user)">
+							SAVE
+							</span>
+							<span class="loader" ng-show="editProfile.user.saving"><span class="glyphicon glyphicon-refresh glyphicon-spin"></span></span>
+						</div>
+						<h2>ACCOUNT DETAILS</h2>
+						<hr/>
+					</div>
+					<div class="panel-body">
+						<div class="alert alert-danger" ng-show="editProfile.user.apiError">{{ editProfile.user.apiError }}</div>
+						<div class="alert alert-success" ng-show="editProfile.user.apiSuccess">{{ editProfile.user.apiSuccess }}</div>
+						<div class="form-group input-group input-group-lg">
+							<input placeholder="FIRST NAME" ng-model="editProfile.user.firstName" class="form-control" type="text"/>
+						</div>
+						<div class="form-group input-group input-group-lg">
+							<input placeholder="LAST NAME" ng-model="editProfile.user.lastName" class="form-control" type="text"/>
+						</div>
+						<div class="form-group input-group input-group-lg">
+							<input placeholder="EMAIL" class="form-control" type="text" value="{{ editProfile.user.email }}" disabled/>
+						</div>
+						<div class="form-group input-group input-group-lg">
+							<input placeholder="FACEBOOK PAGE NAME" ng-model="editProfile.user.facebook" class="form-control" type="text" aria-describedby="basic-addon1"/>
+						</div>
+						<div class="form-group input-group input-group-lg">
+							<input placeholder="TWITTER" ng-model="editProfile.user.twitter" class="form-control" type="text" aria-describedby="basic-addon2"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ffm-well">
+			<div class="row">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="actions">
+							<!-- <a class="btn btn-default" title="" href="">SAVE</a> -->
+						</div>
+						<h2>CHANGE PASSWORD</h2>
+						<hr/>
+					</div>
+					<div class="panel-body">
+						<div class="form-group form-group-lg">
+							<input placeholder="NEW PASSWORD" class="form-control" type="text" disabled/>
+						</div>
+						<div class="form-group form-group-lg">
+							<input placeholder="CONFIRM PASSWORD" class="form-control" type="text" disabled/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ffm-well">
+			<div class="row">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2>Delete Profile</h2>
+						<hr/>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<span class="btn btn-danger" title="" href="" ng-click="editProfile.deleteProfile(editProfile.user)">
+								Delete Profile
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/ng-template" id="deleteConfirmationModal.script">
+		<div class="modal-header">
+			<h3 class="modal-title" id="modal-title">Delete Profile</h3>
+		</div>
+		<div class="modal-body" id="modal-body">
+			<div class="row">
+				<center><strong>Email <a href="mailto:support@festv.us">support@festv.us</a> to delete your account.</strong></center>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-click="vmModal.accepts()">OK</button>
+		</div>
+	</script>
+</div>

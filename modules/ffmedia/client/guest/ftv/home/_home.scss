@@ -1,0 +1,94 @@
+.homeView {
+  text-align: center;
+
+  > .container-first {
+    margin: 0;
+    padding: 60px 20% 0 20%;
+
+    @media #{$breakpointTabletLandscape} {
+      padding: 60px 2em 0 2em;
+    }
+  
+    @media #{$breakpointTablet} {
+      padding: 60px 1em 0 1em;
+    }
+
+    .splash {
+      font-family: $bodyFont;
+      font-size: 1.2em;
+      
+      .splash-title {
+        font-size: 2.5em;
+        margin: 0;
+        display: inline-block;
+        font-weight: 400;
+      }
+
+      h1 {
+        font-family: 'gothambold', sans-serif;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+    }
+
+    .subscribe {
+      margin-top: 15vh;
+      font-size: 1.2em;
+
+      @media #{$breakpointTablet} {
+        margin-top: 6vh;
+      }
+
+      .subscribe-join {
+        color: $highlightColor;
+        text-transform: uppercase;
+        font-family: 'gothambold', sans-serif;
+      }
+
+      .subscribe-email {
+        border: 5px solid $highlightColor;
+        margin: 1.5em auto 0;
+        width: 90%;
+        max-width: 32em;
+
+        .subscribe-form {
+          display: inline-flex;
+          width: 100%;
+
+          .subscribe-input {
+            flex: 1 1 auto;
+            padding: 5px;
+            font-family: $bodyFont;
+            font-size: 1em;
+            color: #000000;
+            outline: none;
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .subscribe-button {
+            flex: 0 0 32px;
+            border: none;
+            outline: none;
+            background: #000000;
+
+            &:hover {
+              background: $highlightColor;
+              color: #000000;
+            }
+
+            font-size: 1em;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

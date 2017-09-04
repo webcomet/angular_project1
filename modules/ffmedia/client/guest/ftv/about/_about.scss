@@ -1,0 +1,10 @@
+.aboutView {
+  p {
+    padding-bottom: 5vh;
+    line-height: 175%;
+
+    &:last-child {
+      padding-bottom: 1vh;
+    }
+  }
+}

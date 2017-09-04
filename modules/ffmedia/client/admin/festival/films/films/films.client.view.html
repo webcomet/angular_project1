@@ -1,0 +1,43 @@
+<div class="filmsFilmsView container-fluid" ng-controller="AdminFestivalFilm as vmFilm">
+  <div class="container-fluid title-bar">
+    <div class="ffm-well">
+          <div class="row">
+              <div class="col-md-3 col-xs-3">
+                <h3 class="font-ca">Films</h3>
+              </div>
+              <div class="col-md-3 col-xs-3 mag-top-10">
+                  <button type="button" class="btn btn-default">Uncategorized <span class="glyphicon glyphicon-filter"></span></button>
+              </div>
+              <div class="col-md-3 col-xs-3 mag-top-10">
+                  <button type="button" class="btn btn-default" ui-sref="index.admin.festival.films.createUpdate">Add Film +</button>
+              </div>
+              <div class="col-md-3 col-xs-3 mag-top-5">
+                <div class="ffm_search">
+                  <form action="#" method="post">
+                    <input type="text" name="Search" placeholder="Search" required="">
+                  </form>
+                </div>
+              </div>
+          </div>
+    </div>
+  </div>
+<!-- /End Title Bar -->
+<!-- Main container -->
+<div class="container-fluid" id="films">
+  <div class="container-fluid ffm-well">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-xs-3 thumb" ng-style="{ clear: ($index % 4)?'none':'left' }" ng-repeat="video in vmFilm.videoList">
+          <a ui-sref="index.admin.festival.films.createUpdate({film_id: video._id})">
+          <img class="img-responsive center-block img-rounded" alt="{{video._id}}" width="160"
+             src="{{(video.thumbnailS3url)?video.thumbnailS3url:'/modules/ffmedia/client/assets/img/no-thumbnail.jpg'}}"></a>
+          <span>{{video.title}}</span>
+      </div>
+    </div>
+  </div>
+  <div align="center">
+    <ul uib-pagination total-items="vmFilm.totalCount" ng-model="vmFilm.currentPage" items-per-page="vmFilm.itemsPerPage" class="pagination-sm"
+        ng-change="vmFilm.changePage()" boundary-link-numbers="true" rotate="false"></ul>
+  </div>
+</div>
+<!-- /End Main container -->
+</div>

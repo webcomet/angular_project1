@@ -1,0 +1,289 @@
+.festivalView {
+	@import 'films/films';
+	@import 'theme/theme';
+	@import 'tickets/tickets';
+
+  .font-filmfest {
+    font-size: 15px;
+    font-family: California, sans-serif;
+    letter-spacing: 6px;
+  }
+
+  input[type=checkbox].css-checkbox {
+      position: absolute;
+      z-index: -1000;
+      left: -1000px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      + label.css-label {
+        padding-left: 20px;
+        height: 15px;
+        display: inline-block;
+        line-height: 15px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        font-size: 13px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      &:checked + label.css-label {
+        background-position: 0 -15px;
+      }
+  }
+
+  span.white {
+    color: $white;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 2;
+    color: #000;
+  }
+
+  /* -- Check box setting Jose-- */
+
+  label.css-label {
+    background-image: url(/modules/ffmedia/client/assets/img/checkbox/checkbox.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* -- Check box setting Jose-- */
+
+  .filmmakers-table {
+
+    &.btn-default {
+      padding-right: 50px;
+      padding-left: 50px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+    }
+
+    thead {
+      background-color: $greyA;
+      color: $white;
+    }
+
+    th, td {
+
+      &.corners-left {
+        border-top-left-radius: 15px;
+        -moz-border-radius-topleft: 15px;
+        border-bottom-left-radius: 15px;
+        -moz-border-radius-bottomleft: 15px;
+      }
+
+      &.corners-right {
+        border-top-right-radius: 15px;
+        -moz-border-radius-topright: 15px;
+        border-bottom-right-radius: 15px;
+        -moz-border-radius-bottomright: 15px;
+      }
+
+    }
+  }
+
+  .mytable {
+    border-collapse: inherit;
+  }
+
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 0 solid $greyD;
+  }
+
+  .table-ffm > tbody > tr {
+    background-color: $greyF;
+  }
+
+  th.center {
+    text-align: center;
+  }
+
+    /* -- Main form settings Jose -- */
+
+  .films-create {
+
+    h3 {
+      color: #000;
+      font-size: 35px;
+      text-transform: uppercase;
+      line-height: 35px;
+      font-family: California, sans-serif;
+      letter-spacing: 10px;
+    }
+
+    .upload-drop-zone-film {
+      height: 200px;
+      border-width: 2px;
+      margin-bottom: 20px;
+      color: $greyC;
+      border-style: dashed;
+      border-color: $greyC;
+      line-height: 200px;
+      text-align: center;
+      border-radius: 15px;
+
+      &.drop- {
+        color: $grey2;
+        border-color: $grey2;
+      }
+
+    }
+
+    .dragover {
+      color: $grey2;
+      border-color: $grey2;
+    }
+
+    .preview {
+      clear: both;
+    }
+
+    .preview video {
+      max-width: 300px;
+      max-height: 150px;
+      float: right;
+    }
+
+    video {
+      object-fit: contain;
+    }
+
+    .upload-drop-zone-thumb {
+      height: 250px;
+      border-width: 2px;
+      margin-bottom: 20px;
+      color: $greyC;
+      border-style: dashed;
+      border-color: $greyC;
+      text-align: center;
+      border-radius: 15px;
+
+      p {
+        padding-top: 110px;
+        text-align: center;
+      }
+
+      &.drop {
+        color: $grey2;
+        border-color: $grey2;
+      }
+
+    }
+
+    .synopsis-height {
+      padding: 16px 0 100px 11px;
+    }
+
+    .cast-height {
+      padding: 16px 0 50px 11px;
+    }
+
+  }
+
+  /* -- Main form settings Jose -- */
+
+  /* -- Hover caption thumbnail Jose-- */
+
+  .box {
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 168px;
+
+    img {
+      left: 0;
+      position: absolute;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+    }
+
+    .caption {
+      border-radius: 15px;
+      color: $white;
+      font-family: Tahoma;
+      height: 250px;
+      left: 0;
+      opacity: 0;
+      padding: 15px;
+      position: absolute;
+      text-align: left;
+      width: 170px;
+      z-index: 100;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+    }
+
+    &:hover .fade-caption {
+      opacity: 1;
+    }
+
+  }
+
+  /* -- Circle close buton Jose-- */
+
+  .btn-circle {
+
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+
+    &.btn-lg {
+      width: 50px;
+      height: 50px;
+      padding: 10px 16px;
+      font-size: 18px;
+      line-height: 1.33;
+      border-radius: 25px;
+    }
+
+    &.btn-xl {
+      width: 70px;
+      height: 70px;
+      padding: 10px 16px;
+      font-size: 24px;
+      line-height: 1.33;
+      border-radius: 35px;
+    }
+
+  }
+
+    /* -- Circle close buton Jose-- */
+
+  span.caption.fade-caption h4 {
+    color: #ccc;
+    border-style: dashed;
+    border-color: $greyC;
+    line-height: 29px;
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+  }
+
+  /* -- Hover caption thumbnail Jose-- */
+}

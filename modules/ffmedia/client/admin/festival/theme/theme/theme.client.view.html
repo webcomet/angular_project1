@@ -1,0 +1,256 @@
+<div class="themeChildView container-fluid" ng-controller="AdminFestivalThemeUpdate as vmThemeUpdate">
+  <!-- Main container -->
+  <!-- Title Bar -->
+  <div class="container-fluid title-bar">
+    <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-md-5 col-xs-5">
+          <h3 class="font-ca">
+            FEST > THEME
+          </h3>
+        </div>
+        <div class="col-md-7 col-xs-7">
+          <div class="row">
+            <div class="right">
+              <button type="button"
+                      ng-click="vmThemeUpdate.savePreviewTheme(vmThemeUpdate.theme)"
+                      class="btn btn-warning" title="Save Preview theme"
+                      ng-show="vmThemeUpdate.showSavePreviewButton || vmThemeUpdate.themeForm.$dirty">SAVE
+              </button>
+              <a type="button"
+                      class="btn btn-danger" target='_blank' title="Preview theme" ui-sref="index.guest.ffm.festivals.id.preview({'festival_id': vmThemeUpdate.theme.festivalId})"
+                      ng-show="vmThemeUpdate.showPreviewButton && !vmThemeUpdate.themeForm.$dirty">PREVIEW
+              </a>
+              <button type="button"
+                      ng-show="vmThemeUpdate.showPublishButton && !vmThemeUpdate.themeForm.$dirty"
+                      ng-click="vmThemeUpdate.publishTheme(vmThemeUpdate.theme)" title="Publish theme"
+                      class="btn btn-warning">PUBLISH
+              </button>
+              <button type="button"
+                      ng-show="vmThemeUpdate.showRevertButton || vmThemeUpdate.themeForm.$dirty"
+                      ng-click="vmThemeUpdate.revertChanges()" title="Revert changes"
+                      class="btn btn-warning">REVERT
+              </button>
+              <i ng-show='vmThemeUpdate.spinner' class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /End Title Bar -->
+  <!-- Main container -->
+  <div class="container-fluid">
+    <form name="vmThemeUpdate.themeForm">
+        <div class="container-fluid ffm-well">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <error-message messages='[vmThemeUpdate.error]'></error-message>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <span class="label">HOME PAGE</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="center">
+                        <error-message messages='[vmThemeUpdate.bannerErrorMsg]'></error-message>
+                        <div class="box">
+                          <div class="upload-drop-zone-film" ng-hide="vmThemeUpdate.theme.banner">
+                            <p>Festival Banner</p>
+                          </div>
+                          <div class="preview">
+                            <img ng-if='vmThemeUpdate.theme.banner'
+                              class="previewImg"
+                              ng-class="{imgopacity: vmThemeUpdate.uploading.banner}"
+                              ng-src="{{vmThemeUpdate.theme.banner}}"
+                              title="Update Banner"
+                            />
+                            <span ng-show="vmThemeUpdate.uploading.banner">
+                              <i class="fa fa-circle-o-notch fa-spin loader" style="font-size:48px"></i>
+                            </span>
+                          </div>
+                          <span class="caption fade-caption">
+                            <div class="dashed-border"
+                              ngf-drop="vmThemeUpdate.uploadBanner($file,'banner')"
+                              ngf-select="vmThemeUpdate.uploadBanner($file,'banner')"
+                              ngf-drag-over-class="'dragover'"
+                              ngf-multiple="false"
+                              ngf-allow-dir="false"
+                              accept="image/*"
+                              ngf-pattern="'image/*'">
+                              <p>Drop or Click to Upload</p>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                  <span class="label">FESTIVAL NAME</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" placeholder="" required name='festivalName' class="form-control form-group" ng-model="vmThemeUpdate.theme.festivalName">
+                    </div>
+                  </div>
+                  <span class="label">FESTIVAL DATE</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="btn-group bootstrap-select">
+                        <button type="button" 
+                                title="Select Date"
+                                class="btn dropdown-toggle selectpicker btn-default btn-block margin-bottom" 
+                                ng-model="vmThemeUpdate.theme.festivalDate" 
+                                uib-datepicker-popup="{{vmThemeUpdate.format}}"
+                                is-open="vmThemeUpdate.datePicker.opened" 
+                                datepicker-options="dateOptions" 
+                                alt-input-formats="vmThemeUpdate.altInputFormats" 
+                                ng-click="vmThemeUpdate.openDatePicker()">
+                          <span class="filter-option pull-left">{{vmThemeUpdate.theme.festivalDate| date : 'y-M-d' || 'SELECT DATE'}}</span>&nbsp;<span class="caret"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="label">FESTIVAL END DATE</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <error-message ng-if="(vmThemeUpdate.theme.festivalEndDate | date :'dd/MMM/yyyy') < (vmThemeUpdate.theme.festivalDate | date :'dd/MMM/yyyy')" messages='["Festival end date should not be less than festival start date."]'></error-message>
+                      <div class="btn-group bootstrap-select">
+                        <button type="button"
+                                ng-change="(vmThemeUpdate.theme.festivalEndDate | date :'dd/MMM/yyyy') < (vmThemeUpdate.theme.festivalDate | date :'dd/MMM/yyyy') ? vmThemeUpdate.setSavePreviewButtonVisibility(true) : vmThemeUpdate.setSavePreviewButtonVisibility(false)" 
+                                class="btn dropdown-toggle selectpicker btn-default btn-block margin-bottom" 
+                                ng-model="vmThemeUpdate.theme.festivalEndDate" 
+                                uib-datepicker-popup="{{vmThemeUpdate.format}}" 
+                                title="Select Date" 
+                                is-open="vmThemeUpdate.datePicker.openedEnd" 
+                                datepicker-options="dateOptions" 
+                                alt-input-formats="vmThemeUpdate.altInputFormats" 
+                                ng-click="vmThemeUpdate.openEndDatePicker()">
+                          <span class="filter-option pull-left">{{vmThemeUpdate.theme.festivalEndDate| date : 'y-M-d' || 'SELECT FESTIVAL END DATE'}}</span>&nbsp;<span class="caret"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="label">FESTIVAL CITY</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" 
+                             placeholder="Festival City" required 
+                             name='festivalCity' 
+                             class="form-control form-group" 
+                             ng-model="vmThemeUpdate.theme.festivalCity">
+                    </div>
+                  </div>
+                  <span class="label">FEATURED COLLECTION</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="btn-group bootstrap-select" uib-dropdown keyboard-nav>
+                        <button type="button" 
+                                class="btn dropdown-toggle selectpicker btn-default btn-block margin-bottom" 
+                                uib-dropdown-toggle title="Select Featured Collection">
+                          <span class="filter-option pull-left">{{ vmThemeUpdate.theme.featuredCollection || 'SELECT COLLECTION' }}</span>&nbsp;<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu inner selectpicker" role="menu" style="overflow-y: auto; min-height: 0px;">
+                          <li role="menuitem">
+                            <a href="#" ng-click="vmThemeUpdate.changeCollection(fcollection);vmThemeUpdate.themeForm.$dirty = true;" ng-repeat="fcollection in vmThemeUpdate.collection">{{fcollection}}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div> <span class="label">ABOUT US</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <textarea class="form-control" rows="3" placeholder="" required ng-model="vmThemeUpdate.theme.about"></textarea>
+                    </div>
+                  </div> <span class="label">FACEBOOK</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" placeholder="https://facebook.com" class="form-control form-group" ng-model="vmThemeUpdate.theme.facebook">
+                    </div>
+                  </div> <span class="label">TWITTER</span>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" placeholder="https://twitter.com" class="form-control form-group" ng-model="vmThemeUpdate.theme.twitter">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <span class="label"><span class="white"></span></span>
+                  <div class="row mag-bottom-20">
+                    <div class="col-md-12">
+                      <div class="center">
+                        <error-message messages='[vmThemeUpdate.logoErrorMsg]'></error-message>
+                        <div class="box">
+                          <div ng-hide="vmThemeUpdate.theme.logo"
+                            class="upload-drop-zone-film">
+                            Upload Festival Logo
+                          </div>
+                          <span class="caption fade-caption">
+                            <div class="dashed-border"
+                              ngf-drop="vmThemeUpdate.uploadBanner($file,'logo')"
+                              ngf-select="vmThemeUpdate.uploadBanner($file,'logo')"
+                              ngf-drag-over-class="'dragover'"
+                              ngf-multiple="false"
+                              ngf-allow-dir="false"
+                              accept="image/*"
+                              ngf-pattern="'image/*'">
+                            </div>
+                          </span>
+                          <div class="preview">
+                            <img class="previewImg"
+                              ng-hide='!vmThemeUpdate.theme.logo'
+                              ng-class="{imgopacity: vmThemeUpdate.uploading.logo}"
+                              ng-src="{{vmThemeUpdate.theme.logo}}"
+                              title="Update Logo"
+                            />
+                            <span ng-show="vmThemeUpdate.uploading.logo">
+                              <i class="fa fa-circle-o-notch fa-spin loader" style="font-size:48px"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mag-bottom-20">
+                    <div class="col-md-12">
+                      <div class="center">
+                        <error-message messages='[vmThemeUpdate.laurelErrorMsg]'></error-message>
+                        <div class="box">
+                          <div ng-hide="vmThemeUpdate.theme.laurel"
+                            class="upload-drop-zone-film">
+                            Upload Festival Laurel
+                          </div>
+                          <span class="caption fade-caption">
+                            <div  class="dashed-border"
+                              ngf-drop="vmThemeUpdate.uploadBanner($file, 'laurel')"
+                              ngf-select="vmThemeUpdate.uploadBanner($file,'laurel')"
+                              ngf-drag-over-class="'dragover'"
+                              ngf-multiple="false"
+                              ngf-allow-dir="false"
+                              accept="image/*"
+                              ngf-pattern="'image/*'">
+                            </div>
+                          </span>
+                          <div class="preview">
+                            <img class="previewImg"
+                              ng-hide='!vmThemeUpdate.theme.laurel'
+                              ng-class="{imgopacity: vmThemeUpdate.uploading.laurel}"
+                              ng-src="{{vmThemeUpdate.theme.laurel}}"
+                              title="Update Laurel">
+                            <span ng-show="vmThemeUpdate.uploading.laurel">
+                              <i class="fa fa-circle-o-notch fa-spin loader" style="font-size:48px"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+.inviteView {
+
+  /*-- START  page -- Jose
+  ================================================== --*/
+
+  .btn-default {
+    padding: 5px 30px;
+  }
+
+  .thead-inverse th {
+    color: $white;
+    background-color: $grey3;
+  }
+
+  .btn-toolbar {
+    padding-bottom: 15px;
+  }
+  .btn-csv{
+    position:relative;
+    
+    input[type='file']{
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0.03;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .table {
+    table-layout: fixed;
+    td {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+      .btn-default {
+        padding: 5px 13px;
+      }
+      input.form-control{
+        font-size: 10px;
+      }
+    }
+    > {
+      tbody > tr > {
+        td, th {
+          vertical-align: middle;
+          border-bottom: 1px solid $greyD;
+          padding-left: 15px;
+        }
+      }
+      tfoot > tr > {
+        td, th {
+          vertical-align: middle;
+          border-bottom: 1px solid $greyD;
+          padding-left: 15px;
+        }
+      }
+      thead > tr > {
+        td, th {
+          vertical-align: middle;
+          border-bottom: 1px solid $greyD;
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+
+  table {
+    border-collapse: inherit;
+  }
+
+}

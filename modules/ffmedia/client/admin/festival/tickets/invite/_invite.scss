@@ -1,0 +1,25 @@
+.inviteView {
+
+  .table-ffm {
+    th, td {
+      text-align: center;
+    }
+  }
+
+  h4 {
+    margin-left: 10px;
+  }
+
+  .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+  }
+
+  .full {
+    width: 100%;
+  }
+
+  .bootstrap-select.btn-group .btn .caret {
+      float: right;
+  }
+
+}

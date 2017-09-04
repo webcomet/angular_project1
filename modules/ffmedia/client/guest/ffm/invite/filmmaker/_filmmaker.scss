@@ -1,0 +1,415 @@
+.inviteFilmmakerView {
+	
+
+/*-- START fest-admin-films-create page -- Jose
+================================================== --*/
+
+h3.font-ca {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: California, sans-serif;
+}
+
+h4 {
+  &.image-title {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+  }
+  &.image-title-no {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+  }
+}
+
+.font-filmfest {
+  font-size: 15px;
+  font-family: California, sans-serif;
+  letter-spacing: 6px;
+}
+
+.font-ca {
+  color: #000;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: California, sans-serif;
+  letter-spacing: 10px;
+}
+
+.title {
+  font-size: 70px;
+  padding: 60px 0;
+  font-family: California, sans-serif;
+  letter-spacing: 10px;
+}
+
+.title-bar {
+  .ffm-well {
+    min-height: 20px;
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .right {
+    float: right;
+  }
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-title {
+  max-width: 700px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mag-top-10 {
+  margin: 15px 0 15px 0;
+}
+
+.mag-top-25 {
+  margin-top: 25px;
+}
+
+.btn-danger, .btn-warning {
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 15px;
+  margin: 10px 15px 5px 15px;
+}
+
+.btn-default {
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 2;
+  color: #000;
+}
+
+span.white {
+  color: #fff;
+}
+
+.pad-10 {
+  padding: 10px 0 0 0;
+}
+
+/* -- Drop zone Jose -- */
+
+.upload-drop-zone-film {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center;
+  border-radius: 15px;
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px;
+  &.drop- {
+    color: #222;
+    border-color: #222;
+  }
+}
+
+.upload-drop-zone-thumb {
+  height: 250px;
+  border-width: 2px;
+  margin-bottom: 20px;
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  text-align: center;
+  border-radius: 15px;
+  p {
+    padding-top: 110px;
+    text-align: center;
+  }
+  &.drop {
+    color: #222;
+    border-color: #222;
+  }
+}
+
+/* -- Drop zone Jose -- */
+
+/* -- Accordion -- */
+
+p {
+  margin: 10px;
+}
+
+h4 {
+  margin-left: 10px;
+}
+
+.bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100%;
+}
+
+.caret {
+  border-top: 10px solid #f0ad4e;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.bootstrap-select.btn-group .btn .caret {
+  margin-top: -5px;
+  margin-top: 5px;
+  float: right;
+}
+
+.orange-txt {
+  color: #f0ad4e;
+}
+
+/* -- Accordion -- */
+
+/* -- Well setting Jose -- */
+
+.ffm-well {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+}
+
+.container {
+  position: relative;
+}
+
+.ffm-well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+
+}
+
+.ffm-well-gray {
+  background-image: -webkit-linear-gradient(top, #e8e8e8 0, #f5f5f5 100%);
+  background-image: -o-linear-gradient(top, #e8e8e8 0, #f5f5f5 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
+  background-image: linear-gradient(to bottom, #e8e8e8 0, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
+  background-repeat: repeat-x;
+  border-color: #dcdcdc;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+
+}
+
+.ffm-well-col {
+  background-image: -webkit-linear-gradient(top, #e8e8e8 0, #f5f5f5 100%);
+  background-image: -o-linear-gradient(top, #e8e8e8 0, #f5f5f5 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));
+  background-image: linear-gradient(to bottom, #e8e8e8 0, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
+  background-repeat: repeat-x;
+  border-color: #dcdcdc;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+  min-height: 20px;
+  padding: 5px 15px 25px 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+
+  h4 {
+    font-size: 15px;
+  }
+}
+
+.center {
+  float: none;
+  margin: 0 auto;
+}
+
+/* -- Well setting Jose -- */
+
+/* -- Check box setting Jose-- */
+
+.form-control {
+  border-radius: 15px;
+}
+
+input[type=checkbox].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  + label.css-label {
+    padding-left: 20px;
+    height: 15px;
+    display: inline-block;
+    line-height: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 13px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  &:checked + label.css-label {
+    background-position: 0 -15px;
+  }
+}
+
+label.css-label {
+  /*background-image:url(modules/ffmedia/client/assets/img/checkbox.png);*/
+  background-image: url(../images/checkbox/checkbox.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* -- Check box setting Jose-- */
+
+/* -- Hover caption thumbnail Jose-- */
+
+.box {
+  cursor: pointer;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  div.upload-drop-zone-film {
+    left: 0;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+  }
+  .caption {
+    font-family: Tahoma;
+    font-size: .5em;
+    background-color: #999;
+    background-color: rgba(25, 23, 23, 0.8);
+    position: absolute;
+    color: #fff;
+    z-index: 100;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 91%;
+    text-align: left;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  &:hover .fade-caption {
+    opacity: 1;
+  }
+}
+
+div.dashed-border {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 221px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px 20px 20px 20px;
+}
+
+span.caption.fade-caption h4 {
+  color: #ccc;
+  text-align: center;
+  padding: 45px;
+  font-size: 12px;
+}
+
+/* -- Circle close buton Jose-- */
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  &.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+  }
+  &.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+  }
+}
+
+.right {
+  float: right;
+}
+
+.right-close-button {
+  position: absolute;
+  right: 0px;
+  top: 11px;
+}
+
+.height {
+  height: 217px;
+}
+
+.terms {
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+/* -- Circle close buton Jose-- */
+
+/* -- Hover caption thumbnail Jose-- */
+
+/*-- END fest-admin-films-create page -- Jose
+================================================== --*/
+
+
+
+
+}

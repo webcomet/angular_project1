@@ -1,0 +1,131 @@
+.filmView {
+
+/*-- START Films page -- Jose
+================================================== --*/
+
+h3.font-ca {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  &.image-title {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+  }
+  &.image-title-no {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+  }
+}
+
+.font-ca {
+  color: #000;
+  font-size: 30px;
+  text-transform: uppercase;
+  /*    line-height: 70px;*/
+  font-family: California, sans-serif;
+  letter-spacing: 10px;
+}
+
+.mag-top-5 {
+  margin: 6px 0 5px 0;
+}
+
+.mag-top-10 {
+  margin: 10px 0 10px 0;
+}
+
+.mag-top-25 {
+  margin-top: 25px;
+}
+
+.mag-btm-25 {
+  margin-bottom: 25px;
+}
+
+.title-bar .ffm-well {
+  min-height: 20px;
+  padding: 0px 20px 0px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ffm-well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.image-title {
+  max-width: 700px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumb {
+  margin-top: 15px;
+}
+
+.btn-default, .btn-warning, .btn-success {
+  border-radius: 15px;
+  width: 100%;
+}
+
+.glyph-Column {
+  width: 45%;
+  height: 150px;
+  i {
+    color: #f0ad4e;
+    background-color: #ffffff;
+    border-color: #eea236;
+    padding-top: 30px;
+    font-size: 55px;
+    width: 1em;
+    display: block;
+    margin: -0.5em auto 0px;
+  }
+  p {
+    text-align: center;
+    margin: 10px 0 25px;
+  }
+  ul li {
+    list-style: none;
+    text-align: center;
+  }
+}
+
+.title-orange {
+  color: #e38d13;
+}
+
+/*-- END Films page -- Jose
+================================================== --*/
+@media(max-width: 768px){
+  ul.nav.navbar-nav.navbar-right li {display: inline-block;}
+  ul.footer-social{ text-align: center; }
+  .padding-top { padding-top: 5px; }
+    .mag-btm-25 { margin: 25px 0 140px;}
+}
+
+
+
+}

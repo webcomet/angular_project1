@@ -1,0 +1,20 @@
+.supportView {
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  .support {
+
+    span {
+      color: $orange;
+    }
+
+    .contact {
+      border-top: 1px solid $greyD;
+      padding: 20px 0 20px;
+    }
+
+  }
+	
+}

@@ -1,0 +1,254 @@
+.homeView {
+  text-align: center;
+  color: $white;
+  background: url('/modules/ffmedia/client/assets/img/day-town.jpg') center/cover no-repeat;
+  padding-top: 10vh;
+
+  @media #{$breakpointTablet} {
+    padding-top: 0;
+  }
+
+  > .container-first {
+    margin: 0;
+    padding: 0;
+    
+    .top {
+      padding: 60px 20% 0 20%;
+
+      @media #{$breakpointTabletLandscape} {
+        padding: 60px 2em 0 2em;
+      }
+
+      @media #{$breakpointTablet} {
+        padding: 60px 1em 0 1em;
+      }
+
+      .big-title {
+
+        .title-image { 
+          vertical-align: baseline;
+          margin-right: 1em;
+        }
+
+        .title {
+          display: inline-block;
+          vertical-align: bottom;
+          margin: 0;
+          padding: 0;
+          font-family: 'gothambold', 'California', sans-serif;
+          font-size: 80px;
+          text-transform: uppercase;
+          letter-spacing: 0;
+        }
+      }
+
+      .intro {
+        margin-top: 3em;
+
+        > p {
+          margin-bottom: 2em;
+          font-size: 1.1em;
+        }
+
+        .intro-yellow {
+          margin-top: 3em;
+          color: $highlightColor;
+
+          .intro-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.25em;
+            margin: 0 0 2em;
+          }
+
+          .intro-item {
+            margin: 0;
+            font-style: italic;
+          }
+
+          .intro-strong {
+            text-transform: uppercase;
+            margin: 1em 0;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+
+    .features-bar {
+      width: 100%;
+      margin-top: 4em;
+      padding: 3vmax;
+      background: #000000;
+
+      .features {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 4em;
+
+        .feature {
+          flex: 1 1 0;
+          margin-left: 2em;
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+          
+          h3 {
+            margin: 0 0 1em;
+          }
+        }
+
+        @media #{$breakpointTablet} {
+          flex-direction: column;
+
+          .feature {
+            margin: 2em 0 0;
+            padding: 0 1em;
+          }
+        }
+      }
+
+      .features-support {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 0;
+
+        &:first-of-type {
+          color: $highlightColor;
+        }
+      }
+    }
+
+    .tickets {
+      padding: 4em 2vmax;
+      background: $white;
+      box-shadow: inset 0px 48px 60px -48px #000000;
+
+.ticket-filters {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+
+        .ticket-filter {
+          position: relative;
+          min-width: 75px;
+          margin-left: 2vw;
+          white-space: nowrap;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $greyB;
+          cursor: pointer;
+
+          > span {
+            padding: 1vw;
+          }
+          
+          &:hover {
+            color: $grey4;
+          }
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+        
+          .ticket-filter-toggle {
+            margin-left: 8px;
+          }
+
+          .ticket-filter-menu {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            @include radius(0.3em);
+            list-style: none;
+            overflow: hidden;
+            max-height: 0;
+            z-index: 5;
+            background: #FAFAFA;
+            transition: max-height 0.4s ease;
+
+            &.visible {
+              max-height: 250px;
+            }
+
+            > li {
+              padding: 5px;
+              color: black;
+              transition: background 0.2s ease;
+              &:hover {
+                background: $greyDefault;
+              }
+            }
+          }
+        }
+
+        .ticket-sort {
+          @extend .ticket-filter;
+        }
+      }
+
+      .ticket-tickets {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 2em auto 0;
+
+        .ticket {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          flex: 0 0 185px;
+          height: 121px;
+          margin: 12px 4px;
+          border-radius: 16px;
+          cursor: pointer;
+          background: #000000;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: $greyB;
+            height: 100%;
+            width: 100%;
+            border-radius: 16px;
+            transition: opacity 0.4s ease;
+          }
+
+          .ticket-location {
+            opacity: 0;
+            margin: 0;
+            font-family: 'gothambold', sans-serif;
+            font-size: 2em;
+            color: #FFFFFF;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+          }
+
+          &:first-of-type::before {
+            background: url('/modules/ffmedia/client/assets/img/slo-film-fest.png') center/cover no-repeat;
+          }
+
+          &:hover {
+
+            &::before {
+              opacity: 0;
+            }
+
+            .ticket-location {
+              opacity: 1;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

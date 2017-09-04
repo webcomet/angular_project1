@@ -1,0 +1,109 @@
+.createUpdateView {
+
+  /*-- START fest-admin-films-create page -- Jose
+  ================================================== --*/
+
+  div.container-fluid.filmmakers-table {
+    padding-left: 15px;
+  }
+
+  /* -- Check box setting Jose-- */
+
+  label.css-label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+	.upload-drop-zone-film {
+    color: #ccc;
+    line-height: 200px;
+    text-align: center;
+    border-radius: 15px;
+    height: 200px;
+    border-width: 2px;
+		border-style: none;
+    &.drop- {
+      color: #222;
+      border-color: #222;
+    }
+  }
+
+	.box {
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+    overflow: unset;
+    border-radius: 15px;
+    position:relative;
+    background-color:#e6e4e4;
+
+    .upload-drop-zone-film {
+      left: 0;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+    }
+    .caption {
+      background-color: #191717;
+      background-color: rgba(25, 23, 23, 0.8);
+      position: absolute;
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      top: 0;
+      left: 0;
+    }
+    &:hover .fade-caption {
+      opacity: 1;
+    }
+    img {
+      left: 0;
+      position: relative;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+    }
+    .preview {
+      .previewImg {
+        width: 100%;
+      }
+      .imgopacity{
+        opacity:0.4;
+      }
+      .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
+    }
+  }
+
+  div.dashed-border {
+    color: #ccc;
+    height: 100%;
+    width: 100%;
+    border-style: dashed;
+    border-color: #ccc;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 20px 20px 20px;
+  }
+
+  /* -- Check box setting Jose-- */
+
+  /*-- END fest-admin-films-create page -- Jose
+  ================================================== --*/
+
+}

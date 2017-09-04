@@ -1,0 +1,365 @@
+.adminView {
+  font-family: gothambook, sans-serif;
+  font-size: 14px;
+
+  @import 'includes/header/header';
+  @import 'includes/menu/menu';
+  @import 'festival/festival';
+  @import 'user/user';
+  @import 'internal/internal';
+
+  .body {
+    margin: 60px 180px 0;
+    color: $grey4;
+    
+    @media #{$breakpointTablet} {
+      margin: 60px 10px 10px;
+    }
+
+    h1 {
+      border: 2px solid $greyD;
+      border-radius: 15px;
+      color: $black;
+      font-family: $titleFont;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding: 10px 16px;
+    }
+
+    .search-container {
+      .input-group {
+        margin-top: 0px;
+      }
+    }
+
+    @media #{$breakpointTabletLandscape} {
+      .search-container {
+        overflow: hidden;
+        .input-group {
+          width: 100%;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    h3.font-ca {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-family: California, sans-serif;
+    }
+
+    h4 {
+      &.image-title {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        padding-bottom: 0;
+      }
+      &.image-title-no {
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding-bottom: 0;
+      }
+    }
+
+    hr {
+      margin-top: 0;
+      border-top: 2px solid $greyD;
+    }
+
+    .title {
+      font-size: 70px;
+      padding: 60px 0;
+      font-family: California, sans-serif;
+      letter-spacing: 10px;
+    }
+
+    .title-bar {
+      &.ffm-well {
+        min-height: 20px;
+        padding: 0 20px 0 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ffm-well {
+        min-height: 20px;
+        padding: 0 20px 0 20px;
+        margin: 20px auto;
+      }
+      .right {
+        float: right;
+      }
+    }
+
+    .ffm-well {
+      background-color: $white;
+      border: 1px solid $greyE;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      min-height: 20px;
+      padding: 19px;
+
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+    }
+
+    .ffm-well-gray {
+      background-color: $greyF;
+      background-image: -webkit-linear-gradient(top, $greyE 0, $greyF 100%);
+      background-image: -o-linear-gradient(top, $greyE 0, $greyF 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, from($greyE), to($greyF));
+      background-image: linear-gradient(to bottom, $greyE 0, $greyF 100%);
+      // ** -- IE Background Gradient Fallback -- **//
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$greyE-ie-filter', endColorstr='$greyF-ie-filter', GradientType=0);
+      background-repeat: repeat-x;
+      border: 1px solid $greyE;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      min-height: 20px;
+      padding: 19px;
+
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+      -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    }
+
+    .ffm-well-col {
+      background-color: $greyF;
+      background-image: -webkit-linear-gradient(top, $greyE 0, $greyF 100%);
+      background-image: -o-linear-gradient(top, $greyE 0, $greyF 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, from($greyE), to($greyF));
+      background-image: linear-gradient(to bottom, $greyE 0, $greyF 100%);
+      // ** -- IE Background Gradient Fallback -- **//
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$greyE-ie-filter', endColorstr='$greyF-ie-filter', GradientType=0);
+      background-repeat: repeat-x;
+      border: 1px solid $greyE;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      min-height: 20px;
+      padding: 5px 15px 25px 15px;
+
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+      -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+
+      h4 {
+        font-size: 15px;
+      }
+
+    }
+
+    .font-ca {
+      color: #000;
+      font-size: 30px;
+      text-transform: uppercase;
+      /*    line-height: 70px;*/
+      font-family: California, sans-serif;
+      letter-spacing: 5px;
+    }
+
+    .container-fluid {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .center {
+      float: none;
+      margin: 0 auto;
+    }
+
+    .caret {
+      border-top: 10px solid #0093cf;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+    }
+
+    .bootstrap-select.btn-group .btn .caret {
+      margin-top: 5px;
+      float: right;
+    }
+
+    .accordion-well-gray {
+      min-height: 20px;
+      padding: 8px;
+      border: 1px solid $greyE;
+      border-radius: 15px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .panel {
+
+      .panel-heading {
+        padding: 20px 20px;
+
+        h2 {
+          margin-top: 0;
+          padding: 6px 0;
+        }
+        .actions {
+          float: right;
+
+          .loader {
+            font-size: 25px;
+            vertical-align: middle;
+          }
+        }
+        hr {
+          margin-bottom: 0;
+        }
+      }
+      .panel-body {
+        padding: 0 20px 20px;
+      }
+    }
+    
+  .tickets-container {
+    padding: 1%;
+  }
+
+  .ticketsBackground {
+    border-radius: 15px;
+    height: auto;
+    float: left;
+    margin: 1%;
+    position: relative;
+    width: 48%;
+
+  }
+
+  @media #{$breakpointTabletLandscape} {
+    .ticketsBackground {
+      width: 98%;
+    }
+  }
+
+  img {
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  .hoverText {
+    background: $grey3;
+    border-radius: 15px;
+    color: $white;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+
+    strong {
+      display: block;
+      padding: 24.5% 0;
+    }
+
+  }
+
+  .ticketsBackground:hover .hoverText
+  {
+    opacity:0.75;
+  }
+
+    .image-title {
+      max-width: 700px;
+      padding-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-control {
+      border-radius: 15px;
+    }
+
+    .form-group-lg {
+      .form-control {
+        border: 1px solid $greyD;
+        border-radius: 0;
+      }
+    }
+
+    .input-group {
+      .input-group-addon {
+        border: 1px solid $greyD;
+        border-radius: 0;
+      }
+      &.input-group-lg {
+        > .input-group-addon {
+          padding: 6px 12px;
+        }
+      }
+      .form-control {
+        border: 1px solid $greyD;
+        border-radius: 10px;
+      }
+    }
+
+    .btn {
+      border-radius: 10px;
+      padding: 6px 20px;
+
+      .btnRightIcon{
+        margin: 0 5px;
+      }
+    }
+
+    .btnPrime{
+      background: $greyDefault;
+      color: $white;
+    }
+
+    .btn-danger, .btn-warning, .btn-success {
+      padding-right: 50px;
+      padding-left: 50px;
+      border-radius: 15px;
+    }
+
+    .btn-default {
+      padding-right: 20px;
+      padding-left: 20px;
+      border-radius: 15px;
+    }
+
+    .headerRightItem{
+      font-family: $bodyFont;
+      float: right;
+      margin: 0 0.5%;
+    }
+
+    .mag-top-10 {
+      margin: 10px 0 10px 0;
+    }
+
+    .mag-top-25 {
+      margin-top: 25px;
+    }
+
+    .mag-bottom-20 {
+      margin-bottom: 20px;
+    }
+
+    .mag-left-10 {
+      margin-left: 10px;
+    }
+
+  }
+}

@@ -1,0 +1,52 @@
+<div class="signupView" ng-controller="AuthenticationSignupController as signup">
+    <div class="signup-header"><a class="header-link" ui-sref="index.guest.ftv.home">FESTV Home</a></div>
+    <div class="signup-container">
+        <h3 class="signup-title">SIGN UP!</h3>
+        <ul class="nav nav-tabs nav-justified">
+            <li ng-class="{active: signup.activeTab === 'attendee'}"><a data-toggle="tab" ng-click="signup.activeTab = 'attendee'">Festival Attendee</a></li>
+            <li ng-class="{active: signup.activeTab === 'festival'}"><a data-toggle="tab" ng-click="signup.activeTab = 'festival'">Film Festival</a></li>
+            <li ng-class="{active: signup.activeTab === 'filmmaker'}"><a data-toggle="tab" ng-click="signup.activeTab = 'filmmaker'">Filmmaker</a></li>
+        </ul>
+        <div class="tab-content">
+        <div id="festival-attendee" class="tab-pane fade in active">
+            <h4 class="signup-method">SIGN UP VIA SOCIAL MEDIA</h4>
+            <form name="signup.userForm" ng-submit="signup.signup(signup.userForm.$valid)" novalidate autocomplete="off">
+                <div class="form-group">
+                    <button type="button" class="btn btn-block btn-primary">LOGIN WITH FACEBOOK</button>
+                    <button type="button" class="btn btn-block btn-info">LOGIN WITH GOOGLE</button>
+                </div>
+                <div class="form-group" show-errors>
+                    <h4 class="signup-method">SIGN UP VIA EMAIL</h4>
+                    <input type="text" id="email" name="email" class="form-control" ng-model="signup.credentials.email" placeholder="EMAIL" lowercase required>
+                    <div ng-messages="signup.userForm.email.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Email address is required.</p>
+                        <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <input type="password" id="password" name="password" class="form-control" ng-model="signup.credentials.password" placeholder="PASSWORD" uib-popover="{{signup.getPopoverMsg()}}" uib-popover-trigger="focus" password-validator required>
+                    <div ng-messages="signup.userForm.password.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Password is required.</p>
+                        <div ng-repeat="passwordError in passwordErrors">
+                            <p class="help-block error-text" ng-show="signup.userForm.password.$error.requirements">{{passwordError}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="signup.activeTab === 'festival'">
+                    <p class="festival-account">
+                        Festival founder or staff? Your Festival may have an account. <a target="_blank" href="mailto:info@festv.us">Ask us.</a>
+                    </p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="festival-name" placeholder="FESTIVAL NAME" name="festivalName" autocomplete="off" ng-model="signup.credentials.festivalName">
+                    </div>
+                </div>
+                <div class="form-group top">
+                    <button type="submit" class="btn btn-block btn-warning signup-button">SIGN UP</button>
+                </div>
+                <div ng-show="signup.error" class="text-center text-danger">
+                    <strong ng-bind="signup.error"></strong>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+.homeView {
+
+  .festival-select-list {
+    background: $greyE;
+    border: 1px solid $greyC;
+    border-radius: 5px;
+    display: block;
+    list-style: none;
+    height: 50vh;
+    overflow-y: auto;
+
+    /* Scrollbar -- Chrome Only */
+    &::-webkit-scrollbar-track {
+      background-color: $greyB;
+      width: 2px; 
+    }
+    &::-webkit-scrollbar { width: 2px; }
+    &::-webkit-scrollbar-thumb{
+      background-color: $white;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: $greyB;
+      }
+    }
+    /* End Scrollbar */
+    padding: 0 3px;
+
+    li {
+      background: $greyF;
+      border: 1px solid $greyC;
+      border-radius: 5px;
+      font-size: 10px;
+      display: block;
+      margin: 3px 0 0 0;
+      overflow: hidden;
+      padding: 8px 6px;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 3px;
+      }
+
+      &:hover {
+        background: $white; /* Old browsers */
+        background: -moz-linear-gradient(top, $white 91%, $greyF 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, $white 91%,$greyF 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, $white 91%,$greyF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$greyF',GradientType=0 ); /* IE6-9 */
+        cursor: move;
+      }
+
+      img {
+        float: left;
+        margin-right: 3%;
+        width: 35%;
+      }
+
+      h5 {
+        font-family: California, sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      time {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+        padding-right: 10px;
+        text-align: right;
+      }
+    }
+
+  }
+
+  .festival-search {
+    border: 1px solid $greyC;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 8px 6px;
+    width: 100%;
+  }
+
+  [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+
+}
+

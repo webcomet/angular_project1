@@ -1,0 +1,17 @@
+<div class="headerComponent" ng-controller="HeaderController as vmHeader">
+    <nav class="header-menu" ng-class="{active: vmHeader.showMenu}" ng-mouseleave="vmHeader.showMenu = false;">
+        <ul class="header-menu-list">
+            <li class="header-menu-item"><a href="#">About</a></li>
+            <li class="header-menu-item"><a href="#">How It Works</a>
+                <ul class="header-submenu">
+                    <li class="header-menu-item"><a ui-sref="index.guest.ffm.festivals.how-it-works">For Festivals</a></li>
+                    <li class="header-menu-item"><a ui-sref="index.guest.ffm.filmmakers.how-it-works">For Filmmakers</a></li>
+                </ul>
+            </li>
+            <li class="header-menu-item"><a href="#" ui-sref="index.guest.ftv.ways-to-stream">Ways To Stream</a></li>
+            <li class="header-menu-item"><a href="#">FAQ</a></li>            
+            <li class="header-menu-item"><a ui-sref="index.guest.ftv.home">FESTV</a></li>
+        </ul>
+    </nav>
+    <div class="header-container" ng-include="'/modules/ffmedia/client/guest/includes/header/header.client.view.html'"></div>
+</div>

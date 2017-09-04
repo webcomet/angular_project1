@@ -1,0 +1,90 @@
+.waysToStreamView {
+
+  .top {
+    text-align: center;
+
+    .top-title {
+      font-size: 3.5em;
+
+      span {
+        font-family: $boldFont;
+      }
+    }
+
+    .top-devices {
+      margin: 3em 0;
+
+      h4 {
+        text-transform: uppercase;
+        font-family: $mediumFont;
+
+        &:before, &:after {
+          content: '';
+          display: inline-block;
+          background: white;
+          height: 3px;
+          width: 50px;
+          margin: 0 10px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .stream-service {
+    width: 90%;
+    max-width: 950px;
+    margin: 2em auto;
+    border: 2px dashed $white;
+    padding: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    @include radius(1em);
+
+    h2 {
+      margin: 0.5em 0;
+      font-family: $mediumFont;
+
+      .service-name {
+        color: $black;
+        background: $greyC;
+        padding: 5px 10px;
+        @include radius(10px);
+      }
+
+      .service-type {
+        color: $highlightColor;
+        &:before {
+          content: '|';
+          margin: 0 0.5em;
+        }
+      }
+    }
+
+    .service-description {
+      font-size: 1.2em;
+      font-family: $mediumFont;  
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .service-info {
+      margin-top: 1em;
+
+      div {
+        display: inline-block;
+        margin: 0 1em;
+        font-family: $mediumFont;
+  
+        > h3 {
+          color: $highlightColor;
+          margin: 5px 0;
+        }
+
+        > h4 {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

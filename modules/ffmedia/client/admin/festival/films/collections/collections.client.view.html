@@ -1,0 +1,462 @@
+<div class="collectionsUpdateView" ng-controller="AdminFestivalFilmCollections as vmCollection">
+  <!-- Title Bar --> 
+  <div class="container-fluid title-bar">
+    <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-lg-9 col-sm-8 col-xs-6">
+          <h3 class="font-ca">
+            FILMS > COLLECTIONS
+          </h3>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+          <div class="row">
+            <div class="col-md-12 mag-top-10">
+              <button type="button" class="btn btn-default right" ng-show="!vmCollection.showAddTypeBlock" ng-click="vmCollection.showAddTypeBlock = true;">ADD TYPE +</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /End Title Bar --> 
+  <!-- Main container --> 
+  <uib-accordion close-others="oneAtATime">
+    <div class="container-fluid films-create">
+      <div class="container-fluid ffm-well">
+        <error-message messages='[vmCollection.error]'></error-message>
+        <div ng-show="vmCollection.layout">
+          <div class="panel-group" role="tablist" aria-multiselectable="true">
+            <div uib-accordion-group class="panel panel-default">
+              <uib-accordion-heading>
+                YEARS
+              </uib-accordion-heading>
+              <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-1">
+                <div class="panel-body">
+                  <div class="panel-group" role="tablist" aria-multiselectable="true">
+                    <div uib-accordion-group class="panel panel-default">
+                      <uib-accordion-heading>
+                        {{vmCollection.year}}
+                        <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default right" ng-click="$event.stopPropagation(); $event.preventDefault()">ADD FILM +</button>
+                        </div>
+                      </uib-accordion-heading>
+                      <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-1-1">
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 1</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div uib-accordion-group class="panel panel-default">
+                      <uib-accordion-heading>
+                        {{vmCollection.year + 1}}
+                        <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default right" ng-click="$event.stopPropagation(); $event.preventDefault();">ADD FILM +</button>
+                        </div>
+                      </uib-accordion-heading>
+                      <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-1-2">
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 1</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div  class="panel-group" role="tablist" aria-multiselectable="true">
+            <div uib-accordion-group class="panel panel-default">
+              <uib-accordion-heading>
+                GENRE
+              </uib-accordion-heading>
+              <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-2">
+                <div class="panel-body">
+                  <div class="panel-group" role="tablist" aria-multiselectable="true">
+                    <div uib-accordion-group class="panel panel-default">
+                      <uib-accordion-heading>
+                        Documentary
+                        <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default right" ng-click="$event.stopPropagation(); $event.preventDefault();">ADD FILM +</button>
+                        </div>
+                      </uib-accordion-heading>
+                      <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-2-1">
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 1</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div uib-accordion-group class="panel panel-default">
+                      <uib-accordion-heading>
+                        Action
+                        <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default right" ng-click="$event.stopPropagation(); $event.preventDefault();">ADD FILM +</button>
+                        </div>
+                      </uib-accordion-heading>
+                      <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-2-2">
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 1</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div uib-accordion-group class="panel panel-default">
+                      <uib-accordion-heading>
+                        Drama
+                        <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default right" ng-click="$event.stopPropagation(); $event.preventDefault();">ADD FILM +</button>
+                        </div>
+                      </uib-accordion-heading>
+                      <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-2-2">
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 1</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <div class="accordion-drop-zone">
+                                <p class="accordion-text">CURRENT PROJECT SORT: 2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" ng-repeat="collectionType in vmCollection.types" ng-click="vmCollection.typePanel[collectionType._id].open === true ? vmCollection.typePanel[collectionType._id].open = true : vmCollection.typePanel[collectionType._id].open = false;" role="tablist" aria-multiselectable="true">
+          <error-message messages="[vmCollection.errorMessage[collectionType._id]]"></error-message> 
+          <div is-open="vmCollection.typePanel[collectionType._id].open" uib-accordion-group class="panel panel-default">
+            <uib-accordion-heading>
+              {{collectionType.typeTitle}}
+              <div class="btn-group pull-right">
+                <button type="button"
+                        class="btn btn-default right"
+                        ng-hide='collectionType.isDefault' 
+                        ng-show="!vmCollection.showAddCollectionBlock[collectionType._id]"
+                        ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.showAddCollectionBlock[collectionType._id]=true;vmCollection.typePanel[collectionType._id].open = true;">
+                  ADD COLLECTION +
+                </button>
+                <button type="button" 
+                        class="btn btn-default right"
+                        ng-hide='collectionType.isDefault || collectionType.showTypeDeleteButton'  
+                        ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.deleteType(collectionType); collectionType.showEditTypeBlock = false;collectionType.showTypeDeleteButton = false;">
+                  Delete
+                </button>
+                <button type="button" 
+                        class="btn btn-default right"
+                        ng-hide='collectionType.isDefault || collectionType.showEditTypeBlock'  
+                        ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.updateType(collectionType);collectionType.showEditTypeBlock = true;collectionType.spinner = true;">
+                  Edit
+                </button>
+                <span ng-show='collectionType.spinner'>
+                  <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                </span>
+              </div>
+              <div class="accordion-well-gray" ng-show='collectionType.showEditTypeBlock'>
+                <ng-form name="vmCollection.typeForm_{{collectionType._id}}">
+                  <div class="input-group col-sm-12">
+                    <input type="text" 
+                           name="typeTitle"
+                           class="col-sm-8"
+                           placeholder="NEW TYPE TITLE" required
+                           ng-keypress="$event.stopPropagation();" 
+                           ng-click="$event.stopPropagation(); $event.preventDefault();"  
+                           ng-model="vmCollection.editType[collectionType._id].typeTitle">
+                    <span ng-show='vmCollection.editType[collectionType._id].disableEditTypeButton'>
+                      <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                    </span>
+                    <span class="pull-right">
+                      <button type="submit"
+                              class="btn btn-info radius-right pull-right"  
+                              ng-disabled="vmCollection.editType[collectionType._id].disableEditTypeButton" 
+                              ng-hide="vmCollection.typeForm_{{collectionType._id}}.$invalid" 
+                              ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.saveType(vmCollection.editType[collectionType._id], 'editType');vmCollection.editType[collectionType._id].disableEditTypeButton = true;">  
+                        SAVE  
+                      </button>
+                      <a class="btn btn-default btn-default-border-radious pull-right" 
+                         ng-click="$event.stopPropagation(); $event.preventDefault();collectionType.showEditTypeBlock = false;vmCollection.editType[collectionType._id] = {};vmCollection.errorMessage[collectionType._id] = '';" 
+                         href="#" title="Clear">
+                        <i class="glyphicon glyphicon-remove"></i> 
+                      </a>
+                    </span>
+                  </div>
+                </ng-form>
+              </div>
+            </uib-accordion-heading>
+            <div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-1">
+              <div class="panel-body">
+                <div class="panel-group" ng-repeat="collection in collectionType.collectionsId" ng-click="vmCollection.collectionPanel[collection._id].open === true ? vmCollection.collectionPanel[collection._id].open = true : vmCollection.collectionPanel[collection._id].open = false;" role="tablist" aria-multiselectable="true">
+                  <error-message messages="[vmCollection.errorMessage[collection._id]]"></error-message> 
+                  <div is-open="vmCollection.collectionPanel[collection._id].open" uib-accordion-group  class="panel panel-default">
+                    <uib-accordion-heading>
+                      {{collection.collectionTitle}}
+                      <div class="btn-group pull-right">
+                        <button type="button" 
+                                class="btn btn-default right" 
+                                ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.getFilmsByCollectionId(collection);vmCollection.collectionPanel[collection._id].open = true;">
+                          ADD FILM +
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default right"
+                                ng-hide='collection.isDefault || collection.showCollectionDeleteButton'
+                                ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.deleteCollection(collectionType._id, collection);collection.showEditCollectionBlock = false;collection.showCollectionDeleteButton = false;">
+                          Delete
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default right"
+                                ng-hide='collection.isDefault || collection.showEditCollectionBlock'
+                                ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.updateCollection(collectionType._id, collection);collection.showEditCollectionBlock = true;collection.spinner = true;">
+                          Edit
+                        </button>
+                        <span ng-show='collection.spinner'>
+                          <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                        </span>
+                      </div>
+                      <div class="accordion-well-gray" ng-show='collection.showEditCollectionBlock'>
+                        <ng-form name="vmCollection.tagForm_{{collection._id}}">
+                          <div class="input-group col-sm-12">
+                            <input type="text"
+                                   class="col-sm-8"
+                                   name="collectionTitle" required
+                                   ng-keypress="$event.stopPropagation();" 
+                                   ng-click="$event.stopPropagation(); $event.preventDefault();" 
+                                   ng-model="vmCollection.editCollection[collection._id].collectionTitle">
+                            <span ng-show='vmCollection.editCollection[collection._id].disableEditCollectionButton'>
+                              <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                            </span>
+                            <span class="pull-right">
+                              <button type="submit"
+                                      class="btn btn-info radius-right pull-right" 
+                                      ng-disabled="vmCollection.editCollection[collection._id].disableEditCollectionButton" 
+                                      ng-hide="vmCollection.tagForm_{{collection._id}}.$invalid" 
+                                      ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.editCollection[collection._id].disableEditCollectionButton = true; vmCollection.saveCollection(vmCollection.editCollection[collection._id], collectionType._id, 'editCollection');">  
+                                SAVE  
+                              </button>
+                              <a class="btn btn-default btn-default-border-radious pull-right" 
+                                 ng-click="$event.stopPropagation(); $event.preventDefault();collection.showEditCollectionBlock = false;vmCollection.editCollection[collection._id] = {};vmCollection.errorMessage[collection._id] = '';" 
+                                 href="#" title="Clear">
+                                <i class="glyphicon glyphicon-remove"></i> 
+                              </a>
+                            </span>
+                          </div>
+                        </ng-form>
+                      </div>
+                    </uib-accordion-heading>
+                    <div class="panel-collapse" role="tabpanel" aria-labelledby="heading-1-1">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="sortFilms row ng-scope">
+                            <div class="ng-scope">
+                              <div class="dropzone ng-scope">
+                                <div class="container-element">
+                                  <ul dnd-list="collection.films" 
+                                      dnd-allowed-types="['itemType']" 
+                                      dnd-external-sources="true" 
+                                      dnd-drop="vmCollection.dropCallback(event, index, item, external, type, 'itemType')" 
+                                      dnd-inserted="vmCollection.sortFilmsOfCollection(collection)" 
+                                      class="itemlist">
+                                    <li class="ng-scope col-md-2 col-sm-2" ng-repeat="addedFilms in collection.films" 
+                                        dnd-draggable="addedFilms" 
+                                        dnd-type="'itemType'" 
+                                        dnd-effect-allowed="copyMove" 
+                                        dnd-moved="collection.films.splice($index, 1);" 
+                                        draggable="true">
+                                       <div class="accordion-drop-img">
+                                         <div class="box">
+                                           <img src='{{(addedFilms.film.thumbnailS3url) ? addedFilms.film.thumbnailS3url : "/modules/ffmedia/client/assets/img/no-thumbnail.jpg" }}'>
+                                           <span class="caption fade-caption">
+                                             <div class="dashed-border text-center">
+                                               <span ng-click="$event.stopPropagation();$event.preventDefault();vmCollection.removeFilmFromCollection(collection, addedFilms.film);" title="Remove film from collection">
+                                                 <i class="fa fa-times-circle" aria-hidden="true" title="Remove film from collection"></i>
+                                               </span>
+                                             </div>
+                                           </span>
+                                         </div>
+                                        {{addedFilms.film.title}}
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group" ng-show='vmCollection.showAddCollectionBlock[collectionType._id]' role="tablist" aria-multiselectable="true">
+                  <error-message messages="[vmCollection.errorMessage['addCollection_'+collectionType._id]]"></error-message>
+                  <div class="panel">
+                    <div class="accordion-well-gray">
+                      <form name="vmCollection.collectionForm_{{collectionType._id}}">
+                        <div class="input-group col-sm-12">
+                          <input type="text" 
+                                 class="col-sm-8"
+                                 name="collectionTitle"
+                                 placeholder="NEW COLLECTION TITLE"  required 
+                                 ng-model="vmCollection.addCollections[collectionType._id].collectionTitle">
+                          <span ng-show='vmCollection.disableAddCollectionButton[collectionType._id]'>
+                            <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                          </span>
+                          <span class="pull-right">
+                            <button type="submit"
+                                    class="btn btn-info radius-right pull-right" 
+                                    ng-disabled="vmCollection.disableAddCollectionButton[collectionType._id]" 
+                                    ng-hide="vmCollection.collectionForm_{{collectionType._id}}.$invalid"  
+                                    ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.saveCollection(vmCollection.addCollections[collectionType._id], collectionType._id, 'addCollection');vmCollection.disableAddCollectionButton[collectionType._id] = true;">  
+                              SAVE  
+                            </button>
+                            <a class="btn btn-default btn-default-border-radious pull-right" href="#" 
+                               ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.showAddCollectionBlock[collectionType._id]=fasle;vmCollection.addCollections[collectionType._id]={};vmCollection.errorMessage['addCollection_'+collectionType._id]= '';" title="Cancle">
+                              <i class="glyphicon glyphicon-remove"></i> 
+                            </a>
+                          </span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" ng-show='vmCollection.showAddTypeBlock' role="tablist" aria-multiselectable="true">
+          <error-message messages="[vmCollection.errorMessage['addType']]"></error-message>
+          <div class="panel">
+            <div class="accordion-well-gray">
+              <div class="input-group col-sm-12">
+                <form name="vmCollection.typeForm">
+                  <input type="text" 
+                         class="col-sm-8" 
+                         name="typeTitle" 
+                         placeholder="NEW TYPE TITLE" required 
+                         ng-model="vmCollection.addType.typeTitle">
+                  <span ng-show='vmCollection.disableSaveTypeButton'>
+                    <i class="pull-right fa fa-circle-o-notch fa-spin spinner"></i>
+                  </span>
+                  <span class="input-group-btn">
+                    <button type="submit"
+                            class="btn btn-info radius-right pull-right"  
+                            ng-disabled="vmCollection.disableSaveTypeButton" 
+                            ng-hide="vmCollection.typeForm.$invalid" 
+                            ng-click="$event.stopPropagation(); $event.preventDefault(); vmCollection.saveType(vmCollection.addType, 'addType');vmCollection.disableSaveTypeButton = true;"> 
+                      SAVE 
+                    </button>
+                    <a class="btn btn-default btn-default-border-radious pull-right" href="#" 
+                       ng-click="$event.stopPropagation(); $event.preventDefault();vmCollection.showAddTypeBlock = false;vmCollection.addType = {};vmCollection.errorMessage['addType'] = '';" 
+                       title="Cancle">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </a>
+                  </span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </uib-accordion>
+  <script type="text/ng-template" id="deleteConfirmationModal.script">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Confirm Delete</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row">
+                  <center><strong>{{vmModal.message}}</strong></center>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="vmModal.accepts()">Yes</button>
+            <button class="btn btn-warning" type="button" ng-click="vmModal.cancel()">Cancel</button>
+        </div>
+  </script>
+  <script type="text/ng-template" id="chooseFilmsModal.script">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select Films</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-4 text-center accordion-column" ng-repeat="film in vmModal.allFilms" style="padding:0 5px;">
+                    <div class="accordion-drop-zone">
+                          <a ng-show='vmModal.selectedFilm.indexOf(film) === -1' href="#">
+                            <img class='accordion-image' 
+                                 title="Click to add film in this collection" 
+                                 src='{{(film.thumbnailS3url) ? film.thumbnailS3url : "/modules/ffmedia/client/assets/img/no-thumbnail.jpg" }}' 
+                                 ng-click='vmModal.selectFilm(film);'>
+                          </a>
+                          <a ng-show='vmModal.selectedFilm.indexOf(film) !== -1' href="#">
+                            <img class='img-responsive accordion-image' 
+                                 title="Deselect" 
+                                 src='{{(film.thumbnailS3url) ? film.thumbnailS3url : "/modules/ffmedia/client/assets/img/no-thumbnail.jpg" }}' 
+                                 ng-click='vmModal.removeSelectionOfFilm(film);' 
+                                 style='opacity:0.4;'>
+                          </a>
+                          <h5><strong>{{film.title}}</strong></h5>
+                    </div>
+                </div>
+                <div ng-show="vmModal.allFilms.length === 0">
+                    <center><strong>No new films to select.</strong><center>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-show="vmModal.allFilms.length > 0" 
+                    class="btn btn-primary" type="button" 
+                    ng-click="vmModal.accepts()">
+            Add</button>
+            <button class="btn btn-warning" type="button" ng-click="vmModal.cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<!-- /End Main container --> 

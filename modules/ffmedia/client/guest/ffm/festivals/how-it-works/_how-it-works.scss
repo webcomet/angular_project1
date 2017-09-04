@@ -1,0 +1,451 @@
+.how-it-worksView {
+  text-align: center;
+  color: $white;
+  background: url('/modules/ffmedia/client/assets/img/day-town.jpg') top center/4000px no-repeat;  
+  padding-top: 10vh;
+
+  @media #{$breakpointTablet} {
+    padding-top: 0;
+  }
+
+  .highlight {
+    color: $highlightColor;
+  }
+
+  .section-title {
+    font-family: $mediumFont;
+    text-transform: uppercase;
+  }
+
+  .top {
+    padding: 60px 2em 0 2em;
+
+    @media #{$breakpointTablet} {
+      padding: 60px 1em 0 1em;
+    }
+
+    .top-title {
+      font-size: 4em;
+      margin: 0 0 12px;
+
+      > span {
+        font-family: $boldFont;
+      }
+    }
+
+    .top-subtitle {
+      margin-top: 0;
+      font-size: 1.3em;
+      font-style: italic;
+    }
+
+    .top-laurels {
+      margin-top: 5em;
+
+      .top-laurel {
+        display: inline-block;
+        margin-left: 4em;
+
+        @media #{$breakpointTablet} {
+          margin-left: 0;
+          display: block;
+        }
+        
+        &:first-of-type {
+          margin: 0;
+        }
+
+        .laurel-image {
+          height: 175px;
+          width: 225px;
+          background: url('/modules/ffmedia/client/assets/img/laurel.png') center/cover no-repeat;
+          margin: 0 auto;
+          padding: 50px;
+
+          span {
+            @extend .section-title;
+            font-size: 1.25em;
+          }
+        }
+        
+        .laurel-list {
+          margin: 1.5em 0 3em;
+          list-style: none;
+          padding: 0;
+          font-family: $mediumFont;
+          font-size: 1.1em;
+
+          li:before {
+            content: "\2022";
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+
+    .top-strong {
+      margin-top: 2em;
+      color: $highlightColor;
+      white-space: nowrap;
+      @extend .section-title;
+    }
+
+    span.top-strong {
+      font-size: 1.25em;
+    }
+  }
+
+  .tickets {
+    background: black;
+    margin: 3em 0 0;
+    padding: 2em 0;
+
+    .ticket-heading {
+      margin: 0;
+    }
+
+    .ticket-subheading {
+      font-size: 21px;
+      margin: 0.5em 0 1em; 
+    }
+
+    .ticket-type {
+      max-width: 480px;
+      margin: 1.5em auto;
+      padding: 0.5em 1.5em; 
+      background: $grey3;
+      @include radius(1em);
+      font-size: 1.25em;
+      @extend .section-title;
+    }
+
+    .ticket-terms {
+      font-size: 1.1em;
+      font-style: italic;
+      &::before {
+        content: "*";
+      }
+    }
+
+    .ticket-benefits {
+      width: 90%;
+      max-width: 850px;
+      margin: 2em auto;
+      background: $grey4;
+      @include radius(1em);
+      font-family: $boldFont;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      text-align: center;
+
+      .ticket-heading-row {
+        color: $highlightColor;
+        
+        > th {
+          background: $grey3;
+          padding: 1em 0;
+          text-align: center;
+
+          &:first-of-type {
+            text-align: left;
+            padding-left: 16px;
+            @include radius(1em 0 0);
+          }
+
+          &:last-of-type {
+            @include radius(0 1em 0 0);            
+          }
+        }
+      }
+
+      tr {
+        height: 64px;
+        
+        &:nth-of-type(2n) {
+          background: $grey6;
+        }
+
+        td:first-of-type {
+          text-align: left;
+          padding-left: 16px;
+        }
+
+        .checkmark {
+          background: url('/modules/ffmedia/client/assets/img/check-mark.png') center no-repeat;
+          background-size: 84px 78px;
+          width: 64px;
+          height: 64px;
+          margin: 0 auto;
+        }
+
+        .ticket-sponsors {
+          font-family: $bodyFont;
+          font-size: 0.5em;
+          color: $greyA;
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+  .benefits {
+    padding: 2em 0 3em;
+    background: url('/modules/ffmedia/client/assets/img/filmmakers-cartoon.jpg') center/cover no-repeat;
+
+    .benefits-title {
+      font-family: $mediumFont;
+      color: $highlightColor;
+      
+      > span {
+        text-transform: uppercase;
+      }
+    }
+    
+    .benefits-list {
+      margin: 0;
+
+      dt {
+        margin: 1.5em 0 0.5em 0;
+        font-size: 1.5em;
+        font-weight: normal;
+        text-transform: uppercase;
+        color: black;
+
+        p {
+          margin: 0;
+          display: inline-block;
+          width: 440px;
+          background-color: $white;
+          padding: 5px 1em;
+          border-radius: 0.5em;
+        }
+
+
+        &::before {
+          content: "";
+          display: inline-block;
+          margin-right: 0.5em;
+          vertical-align: bottom;
+          width: 64px;
+          height: 64px; 
+          background: url('/modules/ffmedia/client/assets/img/check-mark.png') center no-repeat;
+          background-size: 84px 78px;
+        }
+      }
+
+      dd {
+        padding-left: 64px;
+      }
+    }
+  }
+
+  .nvff {
+    background: url('/modules/ffmedia/client/assets/img/nvff.png') center/cover no-repeat;    
+    border-top: 1em solid black;
+    padding: 250px 0 2em; 
+
+    .nvff-title {
+      margin: 0;
+      font-family: $mediumFont;
+    }
+  }
+
+  .payments {
+    background: url('/modules/ffmedia/client/assets/img/filmmakers-cartoon.jpg') center/cover no-repeat;    
+    padding: 3em 0;
+    @extend .section-title;
+    border-top: 1em solid black;
+    border-bottom: 1em solid black;
+
+    .payments-title {
+      margin: 4px 0;
+    }
+
+    .payments-subtitle {
+      margin: 2em 0 0;
+      font-size: 1.4em;
+    }
+
+    .payments-percent {
+      margin-top: 0.6em;
+      color: $highlightColor;
+      font-size: 2em;
+      font-weight: normal;
+      
+      + dd {
+        font-size: 1.3em;
+      }
+    }
+
+    .payments-paypal {
+      margin: 2em 0 0;
+    }
+  }
+
+  .fans {
+    padding: 1em 0;
+    background: url('/modules/ffmedia/client/assets/img/skyline-background.png') center/cover no-repeat;
+
+    .fans-title {
+      max-width: 1000px;
+      position: relative;
+      margin: 0 auto 2em;
+      padding: 0.5em 0;
+      background: black;
+      @include radius(0.5em);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: 48px;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 30px solid black;
+      }
+    }
+
+    .fans-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .fans-fan {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 0.5em;
+        min-width: 300px;
+        text-align: left;
+
+        &:nth-of-type(1) {
+          flex: 1 1 57%;
+        }
+
+        &:nth-of-type(2) {
+          flex: 1 1 43%;
+        }
+
+        &:nth-of-type(3) {
+          flex: 1 1 auto;
+        }
+
+        &:nth-of-type(4) {
+          flex: 1 1 35%;
+        }
+
+        &:nth-of-type(5) {
+          flex: 1 1 65%;
+        }
+
+        .fans-quote {
+          position: relative;
+          min-height: 160px;
+          margin: 0;
+          background-color: white;
+          padding: 1em;
+          @include radius(0.5em);
+          font-family: $mediumFont;
+          font-size: 1.25em;
+          color: black;
+
+          &::before {
+            @extend .fans-title::before;
+            border-top-color: white;
+          }
+        }
+
+        .fans-name {
+          margin: 1.5em 0 5px 16px;
+          font-size: 2em;
+          font-family: $boldFont;
+          color: $greyA;
+          text-transform: uppercase;
+        }
+
+        .fans-position {
+          display: inline-block;
+          margin: 0 0 2em 16px;
+          color: $greyA;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding: 3em 0 1.5em;
+    background: black;
+    
+    .indie-filmmakers {
+      max-width: 850px;
+      width: 90%;
+      margin: 0 auto;
+      font-family: $mediumFont;
+      font-size: 1.75em;
+    }
+
+    .bottom-image {
+      display: block;
+      margin: 2em auto;
+    }
+
+    .bottom-partners {
+      max-width: 850px;
+      margin: 0 auto;
+      padding-bottom: 2em;
+
+      .partner-image {
+        max-height: 80px;
+        max-width: 200px;
+        margin: 2em 3em;
+      }
+    }
+
+    .action {
+      background: $grey4;
+      display: block;
+      text-align: center; 
+      text-transform: uppercase;
+      width: 90%;
+      margin: 0 auto;
+      padding: 1em 0;
+      border-radius: 1em;
+
+      .action-image {
+        height: 75px;
+        margin: 0 0.5em;
+      }
+
+      .action-heading {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        font-family: $mediumFont;
+      }
+
+      .action-button {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0.5em 0 0.5em 1em;
+        padding: 0.25em 1em;
+        background: #FFFF00;
+        border: none;
+        border-radius: 1em;
+        font-family: $boldFont;
+        font-size: 1.7em;
+        color: $grey4;
+        text-transform: uppercase;
+
+        &:hover, &:focus {
+          background: #FFFF77;
+          outline: none;
+        }
+        &:active {
+          background: #FFEE44;
+        }
+      }
+    }
+  }
+}

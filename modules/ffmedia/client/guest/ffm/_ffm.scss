@@ -1,0 +1,10 @@
+.ffmView {
+	@import 'home/home';
+	@import 'festivals/festivals';
+	@import 'cart/cart';
+	@import 'invite/filmmaker/filmmaker';
+	@import 'filmmakers/filmmakers';
+
+	width: 100%;
+	font-family: $bodyFont;
+}

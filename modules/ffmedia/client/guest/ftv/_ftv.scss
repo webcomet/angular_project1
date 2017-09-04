@@ -1,0 +1,91 @@
+.ftvView {
+  @import 'policy/policy';
+  @import 'home/home';
+  @import 'close-captioning/close-captioning';
+  @import 'faq/faq';
+  @import 'about/about';
+  @import 'terms-of-service/terms-of-service';
+  @import 'ways-to-stream/ways-to-stream';
+
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background: url('/modules/ffmedia/client/assets/img/day-town.jpg') center/cover no-repeat;
+  font-family: $bodyFont;
+  color: $white;
+
+  .body {
+    position: relative;
+    z-index: 10;
+    padding-top: 10vh;
+
+    section[ui-view] {
+      height: 100%;
+    }
+
+    .heading-center {
+      font-size: 38px;
+      font-weight: bold;
+      padding-bottom: 15px;
+      text-align: center;
+
+      @media #{$breakpointPhoneLandscape} {
+        font-size: 22px;
+      }
+    }
+
+    .article-container {
+      background: $grey2;
+      background:rgba(0,0,0,0.2);
+      border-radius: 10px;
+      font-size: 16px;
+      height: 65vh;
+      padding: 38px 44px;
+
+      strong {
+        color: $yellow;
+        font-weight: bold;
+      }
+
+      @media #{$breakpointPhoneLandscape} {
+        height: auto !important;
+        padding: 30px;
+      }
+
+    }
+
+    .extra-leading {
+      display: flex;
+      p {
+        padding-bottom: 1.3em;
+      }
+    }
+
+    .scrollable-y {
+      height: 100%;
+      padding-right: 2%;
+      overflow-y: auto;
+
+      /* Scrollbar -- Chrome Only */
+      &::-webkit-scrollbar-track {
+        background-color: $grey3;
+        width: 2px; 
+      }
+      &::-webkit-scrollbar { width: 2px; }
+      &::-webkit-scrollbar-thumb{
+        background-color: $white;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: $greyD;
+        }
+      }
+      /* End Scrollbar */
+
+      @media #{$breakpointPhoneLandscape} {
+        max-height: 35vh;
+      }
+    }
+
+  }
+}

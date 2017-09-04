@@ -1,0 +1,163 @@
+.signupView {
+  min-height: 100vh;
+  background: url('/modules/ffmedia/client/assets/img/day-town.jpg') center/cover no-repeat;
+  color: #FFFFFF;
+  margin: 0;
+
+  .signup-header {
+    height: 60px;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(black, transparent);
+    position: fixed;
+    top: 0;
+    padding: 0 30px; 
+
+    .header-link {
+      color: white;
+      text-transform: uppercase;
+      font-family: $mediumFont;
+      font-size: 1.1em;
+      line-height: 60px;
+    }
+  }
+
+  .signup-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5vh 0;
+
+    .signup-title {
+      font-size: 4.5em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: $boldFont;
+      margin-bottom: 24px;
+    }
+      
+    .nav > li {
+      > a {
+        margin-right: 1px;
+        padding: 25px 0 25px 0;
+        font-size: 1.5em;
+        font-family: $mediumFont;
+        color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          text-decoration: underline;
+          background: transparent;
+          border: none;
+        }
+      }
+
+      &.active > a {
+        color: #FFF000;
+        border: none;
+        background: transparent;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &:last-of-type > a {
+        margin-right: 0;
+      }
+    }
+
+    .tab-content {
+      padding: 1em 2em;
+      border: 1px solid #373A3C;
+      border-top: none;
+      @include radius(16px);
+      background: $grey3;
+
+      .signup-method {
+        margin: 25px 0 10px 0;
+        font-family: $mediumFont;
+        font-size: 1.2em;
+      }
+
+      .btn-warning, .btn-primary, .btn-info {
+        padding-right: 50px;
+        padding-left: 50px;
+        border-radius: 15px;
+        font-size: 1.2em;
+        font-family: $mediumFont;
+      }
+
+      .btn-primary {
+        background: #AAA;
+        border: none;
+        &:hover {
+          background: #555;
+        }
+      }
+
+      .btn-info {
+        background: #777;
+        border: none;
+        
+        &:hover {
+          background: #444;
+        }
+      }
+
+      .btn-block + .btn-block {
+        margin-top: 12px;
+      }
+
+      .signup-button {
+        background: #FFF000;
+        font-size: 1.7em;
+        font-family: $boldFont;
+        color: $grey3;
+        border: 2px solid #FFF000;
+        @include radius(1em);
+
+        &:hover, &:focus {
+          background: $grey3;
+          color: #FFF000;
+        }
+      }
+
+      .form-group {
+        margin: 10px 0 15px 0;
+
+        .form-control {
+          border-radius: 0;
+          height: auto;
+          border: 3px solid $highlightColor;
+          font-size: 16px;
+          color: #000000;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+
+        .help-block {
+          font-size: 16px;
+          color: #FF424F;
+        }
+
+        .popover {
+          color: #000000;
+        }
+      }
+
+      .top {
+        margin: 25px 0 25px 0;
+      }
+
+      .festival-account > a {
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

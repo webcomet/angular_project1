@@ -1,0 +1,339 @@
+<div class="festivalHome" ng-controller="GuestFestivalThemePreview as vmTheme">
+	<a href="" ui-sref="index.guest.ffm.festivals.festival.film({festival_id: 1, film_id: 1})">Film #1</a>
+
+<!-- Main Container -->
+<!-- Hero image -->
+<div class="hero-image-container" style="background-image:url('{{ vmTheme.theme.banner || 'https://placeholdit.imgix.net/~text?txtsize=33&txt=1200%C3%97450&w=1200&h=450' }}');">
+  <img class="hero-image" ng-src="{{ vmTheme.theme.banner || 'https://placeholdit.imgix.net/~text?txtsize=33&txt=1200%C3%97450&w=1200&h=450' }}">
+  <div class="row-fluid" style="position: absolute; top: 0; left: 0; right: 0;">
+    <div class="col-md-12">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-left">
+          <div class="row">
+            <div class="col-sm-12 img-crop">
+              <a href="" ng-if="vmTheme.theme.logo">
+                <img class="img-responsive center-block" ng-src="{{ vmTheme.theme.logo }}">
+              </a>
+            </div>
+            <div class="col-sm-12 img-crop">
+              <a href="" ng-if="vmTheme.theme.laurel">
+                <img class="img-responsive center-block img-rounded" ng-src="{{ vmTheme.theme.laurel }}">
+              </a>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 text-right">
+        <h4>{{ vmTheme.theme.festivalName }}</h4>
+        <h4>{{ vmTheme.theme.festivalCity }}</h4>
+        <h4>{{ vmTheme.festDate || vmTheme.theme.festivalDate | date : 'MMMM dd, y' }} </h4>
+        <a ng-if='vmTheme.theme.facebook' href="{{ vmTheme.theme.facebook }}" target="_blank">
+          <p>/{{ vmTheme.theme.festivalName }}
+            <img class="social-media" src="https://cdn4.iconfinder.com/data/icons/miu-square-flat-social/60/facebook-square-social-media-128.png">
+          </p>
+        </a>
+        <a ng-if='vmTheme.theme.twitter' href="{{ vmTheme.theme.twitter }}" target="_blank">
+          <p>@ {{ vmTheme.theme.festivalName }}
+            <img class="social-media" src="https://cdn2.iconfinder.com/data/icons/social-media-with-original-colors/128/icon-twitter.png">
+          </p>
+        </a>
+      </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row-fluid">
+      <div class="col-lg-12 pad-0">
+        <div class="festival-feed text-left">
+          <p><span>@festival facebook feed</span> the is the comment scrolling here across bottom of banner section....</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero image -->
+
+<!-- Start Gallery -->
+<section class="content-block">
+  <div class="container">
+    <div class="editContent">
+      <ul class="filter">
+        <li><a href="#">A-Z</a></li>
+        <li><a href="#">GENRE <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a></li>
+        <li><a href="#">CATEGORY</a></li>
+        <li><a href="#">MOOD</a></li>
+        <li><a href="#">STAFF PICKS</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="gallery-container">
+        <div class="row">
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-1" >
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-1 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-2">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-2 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-3">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-3 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-4">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-4 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-5">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-5 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-6">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-6 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-7">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-7 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-8">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-8 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-popover-content=".gallery-9">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-9 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-10">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-10 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-11">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-11 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-4 gallery-item-wrapper"> <a href="#"  tabindex="0" data-toggle="popover" data-trigger="hover" data-placement="left" data-popover-content=".gallery-12">
+            <div class="gallery-item">
+              <div class="gallery-thumb">
+                <a class="" title="" ui-sref="index.guest.ffm.festivals.id.film({festival_id: 1, film_id: 1})">
+                  <img class="img-responsive center-block img-rounded" src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/gods-not-dead-2-trailer.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            </a> </div>
+          <div class="gallery-12 hidden">
+            <div class="popover-body">
+              <div class="col-md-12 col-sm-12 gallery-item-wrapper">
+                <div class="well rounded">
+                  <h3 class="center-caption white">God's Not Dead 2</h3>
+                  <p class="white">COMEDY</p>
+                  <p class="title-orange"> ABOUT <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></p>
+                  <p class="white"> (2016) When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble.....</p>
+                  <button type="button" class="btn btn-warning"> GET ACCESS! </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Main Container -->
+</div>

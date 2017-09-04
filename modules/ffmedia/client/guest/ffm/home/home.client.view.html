@@ -1,0 +1,102 @@
+<div class="homeView">
+	<div class="container-fluid container-first">
+		<div class="top">
+			<div class="big-title">
+				<img class="title-image" alt="" src="/modules/ffmedia/client/assets/img/festv-mascot.png"><h1 class="title">Fest Me Up!</h1>
+			</div>
+			<div class="intro"> 
+				<p>Your destination for unlimited access to Film Festival catalogs, collections, films and tickets!</p>
+				<p>Stream anyway you want, how you want, choose from any number of filters, titles and Festivals to preview, purchase and watch</p>
+				<div class="intro-yellow">
+					<h2 class="intro-title">Your own private screening room</h2>
+					<p class="intro-item">Too many screenings, not enough time?</p>
+					<p class="intro-item">Nowhere to find the films you wanted to see post Festival?</p>
+					<p class="intro-item">Nowhere to browse hundreds of Festival programs and instantly watch?</p>
+					<p class="intro-strong">Relax, we got you covered!</p>
+				</div>
+			</div>
+		</div>
+		<div class="features-bar">
+			<div class="features">
+				<div class="feature">
+					<h3>Discover Our Festivals</h3>
+					<p>Browse hundreds of catalogs from the world's best Festivals packaged just for you!</p>
+				</div>
+				<div class="feature">
+					<h3>Get Unprecedented Access</h3>
+					<p>Stream collections and titles from years past up through the current Festival by year, genre, location and running time.</p>
+				</div>
+				<div class="feature">
+					<h3>Preview &amp; Checkout with a Click</h3>
+					<p>Easy checkout allows you to order collections to purchase and enjoy from the comfort of your home or on-the-go.</p>
+				</div>
+			</div>
+			<p class="features-support">Every purchase goes directly to the Filmmaker and the Festival!</p>
+			<p class="features-support">Support Filmmakers, Film Festivals and Indie Film!</p>
+		</div>
+		<div class="tickets">
+			<div class="ticket-filters">
+				<div class="ticket-sort">
+					<span ng-init="sortDateDescending = true;" ng-click="sortDateDescending = !sortDateDescending;">
+						<span>Start Date</span>
+						<span ng-class="{'fa-caret-down': sortDateDescending, 'fa-caret-up': !sortDateDescending}" class="fa ticket-filter-toggle"></span>
+					</span>
+				</div>
+				<div class="ticket-sort">
+					<span ng-init="sortAZDescending = true;" ng-click="sortAZDescending = !sortAZDescending;">
+						<span>A - Z</span>
+						<span ng-class="{'fa-caret-down': sortAZDescending, 'fa-caret-up': !sortAZDescending}" class="fa ticket-filter-toggle"></span>
+					</span>
+				</div>
+				<div class="ticket-filter">
+					<span ng-init="showMenu1 = false" ng-click="showMenu1 = !showMenu1">
+						<span>Ticket Type</span>
+						<span ng-class="{'fa-caret-down': !showMenu1, 'fa-caret-up': showMenu1}" class="fa ticket-filter-toggle"></span>
+					</span>
+					<ul class="ticket-filter-menu" ng-class="{visible: showMenu1}">
+						<li>Item 1</li>
+						<li>Item 2</li>
+					</ul>
+				</div>
+				<div class="ticket-filter">
+					<span ng-init="showMenu2 = false" ng-click="showMenu2 = !showMenu2">
+						<span>Year</span>
+						<span ng-class="{'fa-caret-down': !showMenu2, 'fa-caret-up': showMenu2}" class="fa ticket-filter-toggle"></span>
+					</span>
+					<ul class="ticket-filter-menu" ng-class="{visible: showMenu2}">
+						<li>Item 1</li>
+						<li>Item 2</li>
+					</ul>
+				</div>
+				<div class="ticket-filter">
+					<span ng-init="showMenu3 = false" ng-click="showMenu3 = !showMenu3">
+						<span>Location</span>
+						<span ng-class="{'fa-caret-down': !showMenu3, 'fa-caret-up': showMenu3}" class="fa ticket-filter-toggle"></span>
+					</span>
+					<ul class="ticket-filter-menu" ng-class="{visible: showMenu3}">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>						
+					</ul>
+				</div>			
+			</div>
+			<div class="ticket-tickets">
+				<div class="ticket"><a ui-sref="index.guest.ffm.festivals.id.home({festivalId : '582dd8319776145a00515c59'})" class="ticket-location">San Luis Obispo</a></div>
+				<div class="ticket"><a class="ticket-location">Seattle</a></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+				<div class="ticket"></div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,115 @@
+// festv-production-films policies
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowBrightcoveToAccessVideoFiles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::395540211253:root"
+      },
+      "Action": [
+        "s3:GetObjectAcl",
+        "s3:GetObject",
+        "s3:PutObjectAcl",
+        "s3:PutObject",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-films/*"
+    },
+    {
+      "Sid": "AllowBrightcoveToDetermineBucketLocations",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::395540211253:root"
+      },
+      "Action": [
+        "s3:ListBucketMultipartUploads",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-films"
+    },
+    {
+      "Sid": "AllowBrightcoveToAccessImagesAndWebvttFiles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::749779118921:user/videocloud-ingestion"
+      },
+      "Action": [
+        "s3:GetObjectAcl",
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-films/*"
+    }
+  ]
+}
+
+// festv-production-zencoder policies
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowBrightcoveToAccessVideoFiles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::395540211253:root"
+       },
+      "Action": [
+        "s3:GetObjectAcl",
+        "s3:GetObject",
+        "s3:PutObjectAcl",
+        "s3:PutObject",
+        "s3:ListMultipartUploadParts"
+       ],
+      "Resource": "arn:aws:s3:::festv-production-zencoder/*"
+    },
+    {
+      "Sid": "AllowBrightcoveToDetermineBucketLocations",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::395540211253:root"
+       },
+      "Action": [
+        "s3:ListBucketMultipartUploads",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-zencoder"
+    },
+    {
+      "Sid": "AllowBrightcoveToAccessImagesAndWebvttFiles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::749779118921:user/videocloud-ingestion"
+       },
+      "Action": [
+        "s3:GetObjectAcl",
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-zencoder/*"
+    },
+    {
+      "Sid": "AddPerm",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::festv-production-zencoder/*"
+    }
+  ]
+}
+
+
+// festv-production-images policies
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::festv-production-images/*"
+    }
+  ]
+}

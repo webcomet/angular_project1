@@ -1,0 +1,237 @@
+<div class="inviteView container-fluid">
+
+  <!-- Title Bar --> 
+  <div class="container-fluid title-bar">
+    <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-lg-9 col-sm-8">
+          <h3 class="font-ca">
+            Filmmakers >  Invite
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /End Title Bar --> 
+  <!-- Main container -->
+  <div class="container-fluid filmmakers-table">
+    <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12"> <h3>NEW INVITE</h3>
+              <div class="btn-toolbar">
+                <button type="button" 
+                        class="btn btn-default pull-left"
+                        ng-show="vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.$valid && vmAdminFestivalFilmInviteFilmMaker.newInviteFilmMaker.length >= 2 && !vmAdminFestivalFilmInviteFilmMaker.inviteAllSpinner"
+                        ng-click="vmAdminFestivalFilmInviteFilmMaker.inviteAllFilmmaker(vmAdminFestivalFilmInviteFilmMaker.newInviteFilmMaker);">Invite All
+                </button>
+                <span ng-show='vmAdminFestivalFilmInviteFilmMaker.inviteAllSpinner'>
+                  <i class="fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                </span>
+                <label class="btn btn-default btn-csv pull-right">
+                  <a href="/modules/ffmedia/client/assets/demo.csv" title='Download demo CSV file.' target="_self" download="demo.csv" style='color: inherit;'>Download</a>
+                </label>
+                <label class="btn btn-default btn-csv pull-right">
+                  <import-csv pass-csv-content="vmAdminFestivalFilmInviteFilmMaker.setImportFilmMaker(content);"></import-csv>Import CSV
+                </label>
+                <button type="button" 
+                        class="btn btn-default pull-right" 
+                        ng-hide="vmAdminFestivalFilmInviteFilmMaker.inviteFilmMaker.showCreateNewInviteForm"
+                        ng-click="vmAdminFestivalFilmInviteFilmMaker.addNewInvite();">Add Invite
+                </button>
+                <button type="button"
+                        class="btn btn-default pull-right"
+                        ng-show="!vmAdminFestivalFilmInviteFilmMaker.inviteCheckedSpinner && vmAdminFestivalFilmInviteFilmMaker.bulkInvite.length >= 2" 
+                        ng-click="vmAdminFestivalFilmInviteFilmMaker.inviteCheckedFilmmaker(vmAdminFestivalFilmInviteFilmMaker.bulkInvite);">Invite Checked FilmMakers
+                </button>
+                <span ng-show='vmAdminFestivalFilmInviteFilmMaker.inviteCheckedSpinner'>
+                  <i class="pull-right fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+               <error-message messages="[vmAdminFestivalFilmInviteFilmMaker.error]"></error-message>
+              <ng-form name="vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm">
+                <table class="table table-hover table table-sm">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th class="corners-left first">INVITED </th>
+                      <th class="text-center"> FILM TITLE </th>
+                      <th class="text-center"> FIRST NAME </th>
+                      <th class="text-center"> LAST NAME </th>
+                      <th class="text-center"> INVITE EMAIL </th>
+                      <th class="corners-right text-center" colspan="2"> ACTIONS </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr ng-repeat="filmMaker in vmAdminFestivalFilmInviteFilmMaker.newInviteFilmMaker" 
+                        ng-class="{active: $index % 2 == 0}">
+                      <td>
+                        <input type="checkbox" 
+                               name="checkboxG1" 
+                               id="checkboxG_{{$index}}" 
+                               ng-click="vmAdminFestivalFilmInviteFilmMaker.bulkInviteFilmMakerList(filmMaker)" 
+                               class="css-checkbox"/>
+                        <label ng-show="vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid" for="checkboxG_{{$index}}" class="css-label"></label>
+                      </td>
+                      <td class="text-center" 
+                          ng-hide='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        {{ filmMaker.filmTitle }} 
+                      </td>
+                      <td class="text-center" 
+                          ng-hide='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        {{ filmMaker.inviteEmail }} 
+                      </td>
+                      <td class="text-center" 
+                          ng-hide='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        {{ filmMaker.lastName }} 
+                      </td>
+                      <td class="text-center" 
+                          ng-hide='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        {{ filmMaker.firstName }} 
+                      </td>
+                      <td class="text-center"
+                          ng-show='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        <input type="text" 
+                               name='filmTitle' 
+                               class="form-control"
+                               placeholder="FILM TITLE" 
+                               ng-model="filmMaker.filmTitle">
+                      </td>
+                      <td class="text-center"
+                          ng-show='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        <input type="text" 
+                               name='firstName' 
+                               class="form-control"
+                               placeholder="FIRST NAME" 
+                               ng-model="filmMaker.firstName">
+                      </td>
+                      <td class="text-center"
+                          ng-show='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        <input type="text" 
+                               name='lastName' 
+                               class="form-control"
+                               placeholder="LAST NAME" 
+                               ng-model="filmMaker.lastName">
+                      </td>
+                      <td class="text-center"
+                          ng-show='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.editMode'> 
+                        <input type="text" 
+                               name='invitingEmail_{{filmMaker.tempId}}' 
+                               class="form-control" 
+                               ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"
+                               placeholder="INVITE EMAIL" required
+                               ng-model="filmMaker.inviteEmail">
+                        <strong ng-hide="vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid" 
+                                class="alert" 
+                                style="color:red;">Please fill a valid email address.
+                        </strong>
+                      </td>
+                      <td class="corners-right text-center" colspan="2">
+                        <button type="button" 
+                                class="btn btn-default btn-xs"
+                                ng-show='vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid && !filmMaker.editMode'
+                                ng-click="filmMaker.editMode = true;"> edit
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default btn-xs"
+                                ng-hide='!vmAdminFestivalFilmInviteFilmMaker.inviteFilmMakerForm.invitingEmail_{{filmMaker.tempId}}.$valid || filmMaker.spinner'
+                                ng-click='vmAdminFestivalFilmInviteFilmMaker.createNewInvite(filmMaker);'> Invite
+                        </button>
+                        <span ng-show='filmMaker.spinner'>
+                          <i class="fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </ng-form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"> <h3>PENDING INVITE</h3>
+              <div class="btn-toolbar">
+                <button type="button" 
+                        class="btn btn-default"
+                        ng-show="vmAdminFestivalFilmInviteFilmMaker.invitedFilmMakers.length && !vmAdminFestivalFilmInviteFilmMaker.reInviteAllspinner" 
+                        ng-click="vmAdminFestivalFilmInviteFilmMaker.reInviteFilmMaker(vmAdminFestivalFilmInviteFilmMaker.invitedFilmMakers);vmAdminFestivalFilmInviteFilmMaker.reInviteAllspinner = true;">Re-invite All
+                </button>
+                <span ng-show='vmAdminFestivalFilmInviteFilmMaker.reInviteAllspinner'>
+                  <i class="fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                </span>
+                <button type="button"
+                        class="btn btn-default pull-right"
+                        ng-click="vmAdminFestivalFilmInviteFilmMaker.reInviteFilmMaker(vmAdminFestivalFilmInviteFilmMaker.bulkReInvite);vmAdminFestivalFilmInviteFilmMaker.reInviteCheckedspinner = true;"  
+                        ng-show="!vmAdminFestivalFilmInviteFilmMaker.reInviteCheckedspinner && (vmAdminFestivalFilmInviteFilmMaker.bulkReInvite.length >= 2 && vmAdminFestivalFilmInviteFilmMaker.invitedFilmMakers.length !== vmAdminFestivalFilmInviteFilmMaker.bulkReInvite.length)">Re-invite Checked Film Maker
+                </button>
+                <span ng-show='vmAdminFestivalFilmInviteFilmMaker.reInviteCheckedspinner'>
+                  <i class="pull-right fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover table table-sm">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th class="corners-left" style="width:60px"> INVITED </th>
+                    <th class="text-center"> TITLE </th>
+                    <th class="text-center"> DATE LAST INVITED </th>
+                    <th class="text-center"> INVITE EMAIL </th>
+                    <th class="text-center"> FIRST NAME </th>
+                    <th class="text-center"> LAST NAME </th>
+                    <th class="corners-right text-center" colspan="2"> ACTIONS </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="filmMaker in vmAdminFestivalFilmInviteFilmMaker.invitedFilmMakers" ng-class="{active: $index % 2 == 0}">
+                    <td class="corners-left">
+                      <input type="checkbox" 
+                             name="checkboxG5" 
+                             id="checkboxG{{filmMaker._id}}" 
+                             class="css-checkbox" 
+                             checked="checked"
+                             ng-click="vmAdminFestivalFilmInviteFilmMaker.bulkReInviteFilmMakerList(filmMaker)" />
+                      <label for="checkboxG{{filmMaker._id}}" class="css-label"></label>
+                    </td>
+                    <td class="text-center"> {{filmMaker.filmTitle}} </td>
+                    <td class="text-center"> {{filmMaker.lastInvitedDate| date: 'yyyy.MM.dd'}} </td>
+                    <td class="text-center"> {{filmMaker.inviteEmail}} </td>
+                    <td class="text-center"> {{filmMaker.firstName}} </td>
+                    <td class="text-center"> {{filmMaker.lastName}} </td>
+                    <td class="text-center">
+                      <button type="button" 
+                              class="btn btn-default btn-xs"
+                              ng-hide="filmMaker.spinner"
+                              ng-click='vmAdminFestivalFilmInviteFilmMaker.reInviteFilmMaker(filmMaker);filmMaker.spinner = true;'> Re-Invite
+                      </button>
+                      <span ng-show='filmMaker.spinner'>
+                        <i class="fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                      </span>
+                    </td>
+                    <td class="corners-right text-center">
+                      <button type="button" 
+                              class="btn btn-default btn-xs"
+                              ng-hide="filmMaker.removeSpinner"
+                              ng-click='vmAdminFestivalFilmInviteFilmMaker.deleteSentInvite(filmMaker);'> Delete
+                      </button>
+                      <span ng-show='filmMaker.removeSpinner'>
+                        <i class="fa fa-2x fa-circle-o-notch fa-spin spinner"></i>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /End Main container --> 
+</div>

@@ -1,0 +1,19 @@
+<div class="header-left">
+        <span class="fa fa-bars fa-2x header-menu-toggle" ng-click="vmHeader.showMenu = !vmHeader.showMenu;" ng-mouseenter="vmHeader.showMenu = true;" 
+            ng-class="{active: vmHeader.showMenu}"></span>
+        <span class="header-title">
+            <a ui-sref="index.guest.ftv.home">FESTV</a>&nbsp;/&nbsp;<a ui-sref="index.guest.ffm.home">MEDIA</a>
+        </span>
+    </div>
+<div class="header-right">
+    <span class="header-account" ng-hide="vmHeader.authentication.user">
+        <a ui-sref="index.guest.authentication.signup">Sign Up</a>&nbsp;/&nbsp;
+        <a ui-sref="index.guest.authentication.signin">Log In</a>
+    </span>
+    <span class="header-account" ng-show="vmHeader.authentication.user">
+        <a href="" target="_self" ui-sref="index.admin.user.account.editProfile">Account</a>&nbsp;/&nbsp;
+        <a href="" target="_self" ng-click="vmHeader.signout()">Signout</a>
+    </span>
+    <div class="header-bar"></div>
+    <span class="fa fa-search fa-2x"></span>
+</div>

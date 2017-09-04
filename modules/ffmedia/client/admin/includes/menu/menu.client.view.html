@@ -1,0 +1,53 @@
+<div class="menuComponent" ng-controller="AdminMenuController as vmMenu">
+	<div class="menu-toggle">
+		<span class="fa fa-bars fa-2x" ng-click="vmMenu.showMenu = !vmMenu.showMenu;" ng-mouseenter="vmMenu.showMenu = true;" 
+			ng-class="{active: vmMenu.showMenu}"></span>
+	</div>
+	<nav class="menu" ng-class="{active: vmMenu.showMenu}" ng-mouseleave="vmMenu.showMenu = false;">
+		<ul class="menu--first">
+			<li class="menu-item">
+				<a ui-sref="index.admin.account.editProfile">Your FESTV/Media Account</a>
+				<ul class="menu--second">
+					<li class="menu-item"><a ui-sref="index.admin.user.account.editProfile">Profile</a></li>
+					<li class="menu-item"><a ui-sref="index.admin.user.account.purchases">Purchases</a></li>
+					<li class="menu-item"><a ui-sref="update.in.menu">Payment Options</a></li>
+					<li class="menu-item"><a ui-sref="index.admin.user.account.checkout">Checkout</a></li>
+					<li class="menu-item"><a ui-sref="index.admin.user.account.support">Need Help?</a></li>
+				</ul>
+			</li>
+			<li class="menu-item">
+				<a href="" ui-sref="index.admin.internal.ffm">FESTV/Media</a>
+				<ul class="menu--second">
+					<li class="menu-item"><a ui-sref="index.admin.internal.ffm.home">Media</a></li>
+					<li class="menu-item"><a href="#">FESTV/Media Team</a></li>
+					<li class="menu-item"><a ui-sref="index.admin.internal.ffm.festivals">Festivals</a></li>
+				</ul>
+			</li>
+			<li ng-repeat="festival in vmMenu.festivals" class="menu-item">
+				<a>{{ festival.festivalName }}</a>
+				<ul class="menu--second">
+					<li class="menu-item"><a ui-sref="index.admin.festival.theme.theme({festivalId : festival._id})">Festival Theme</a></li>
+					<li class="menu-item">
+						<a ui-sref="index.admin.festival.films.films({festivalId : festival._id})">Films</a>
+						<ul class="menu--third">
+							<li class="menu-item"><a ui-sref="index.admin.festival.films.invite({festivalId : festival._id})">Invite Filmmakers</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.films.submissions({festivalId : festival._id})">Track Submissions</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.films.createUpdate({festivalId : festival._id})">Create/Update Films</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.films.collections({festivalId : festival._id})">Manage Collections</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.films.films({festivalId : festival._id})">All Films</a></li>
+						</ul>
+					</li>
+					<li class="menu-item">
+						<a ui-sref="index.admin.festival.tickets.tickets({festivalId : festival._id})">Tickets</a>
+						<ul class="menu--third">
+							<li class="menu-item"><a ui-sref="index.admin.festival.tickets.createUpdate({festivalId : festival._id})">Create/Update Tickets</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.tickets.invite({festivalId : festival._id})">Invite</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.tickets.holders({festivalId : festival._id})">Holders</a></li>
+							<li class="menu-item"><a ui-sref="index.admin.festival.tickets.tickets({festivalId : festival._id})">All Tickets</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>

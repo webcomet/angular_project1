@@ -1,0 +1,193 @@
+<div class="createUpdateView" ng-controller="AdminFestivalFilmUpdate as vmUpdate">
+<!-- Title Bar -->
+<div class="container-fluid title-bar">
+  <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-lg-9 col-sm-8 col-xs-6">
+          <h3 class="font-ca">
+              FILMS > CREATE UPDATE
+          </h3>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <div class="row">
+                <div class="col-md-12 mag-top-10">
+                  <table>
+                    <tr><td><a type="button" ui-sref="index.guest.ffm.festivals.id.film({film_id: vmUpdate.video._id})"
+                      class="btn btn-warning right" ng-show="vmUpdate.video.videoIngested" target="_blank">PREVIEW</a>
+                    </td><td>&nbsp;</td>
+                    <td><a type="button" ng-click="vmUpdate.saveFilmVideo(vmUpdate.video, true)"
+                      class="btn btn-warning right" ng-hide="vmUpdate.processing">SAVE</a>
+                      <a type="button" class="btn btn-grey right" ng-show="vmUpdate.processing">
+                        <i class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+                      </a>
+                    </td></tr>
+                  </table>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- /End Title Bar -->
+<!-- Main container -->
+<div class="container-fluid films-create">
+  <div class="container-fluid ffm-well">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+              <div class="col-sm-8 col-xs-8 form-group">
+                <input ng-model="vmUpdate.video.title" type="text" placeholder="Film Title" class="form-control form-group">
+                <h4>Film</h4>
+                <div ngf-drop="vmUpdate.uploadVideo($file)" ngf-select="vmUpdate.uploadVideo($file)" ng-model="vmUpdate.video.file"
+                       class="upload-drop-zone-film" ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="false"
+                       accept="video/*" ngf-pattern="'video/*'" ng-hide="vmUpdate.video.videoS3url||vmUpdate.videoUploading">
+                    Drop or Click to Upload Video File</div>
+                  <div ngf-no-file-drop>
+                    <button type="button" class="btn btn-warning left" ngf-select="vmUpdate.uploadVideo($file)">Select Film</button>
+                  </div>
+                  <div ng-show="vmUpdate.video.videoID">
+                    <span ng-if="vmUpdate.video.videoIngested">
+                      <button type="button" class="btn btn-default" ng-click="vmUpdate.removeVideo()">Remove Video</button>
+                      <div class="player-container" style="height: 600px">
+                        <iframe name="film-player" width="100%"  height="100%" ng-src="{{vmUpdate.getFilmPlayerLocation()}}"
+                            allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+                      </div>
+                    </span>
+                    <span ng-hide="vmUpdate.video.videoIngested">
+                      <i class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+                      Film video is currently ingesting and not yet playable.
+                    </span>
+                  </div>
+                  <br/><br/>
+                <div class="preview">
+                  <h4>{{vmUpdate.processingTitle}}</h4>
+                  <div ng-show="vmUpdate.processing">
+                    <h4>Processing: {{vmUpdate.processingCurrentEvent}} </h4><br/>
+                    <uib-progressbar type="info" title="Processing progressbar" value="vmUpdate.processingPct"></uib-progressbar>
+                  </div>
+                  <div ng-show="vmUpdate.video.teaserID">
+                    <span ng-if="vmUpdate.video.teaserIngested">
+                      <h4>Teaser</h4>
+                      <button type="button" class="btn btn-default" ng-click="vmUpdate.removeTeaser()">Remove Teaser</button>
+                      <div class="player-container" style="height: 600px">
+                        <iframe name="teaser-player" width="100%" height="100%" ng-src="{{vmUpdate.getTeaserPlayerLocation()}}"
+                                allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+                      </div>
+                    </span>
+                    <span ng-hide="vmUpdate.video.teaserIngested">
+                      <h4>Teaser</h4>
+                      <i class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+                      Preview video is current ingesting and not yet playable.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-4">
+                <div class="center">
+                  <div class="box">
+                    <div ngf-drop="vmUpdate.uploadThumbnail($file)" ngf-select="vmUpdate.uploadThumbnail($file)" ng-model="vmUpdate.video.thumbnail"
+                         class="upload-drop-zone-film" ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="false"
+                         accept="image/*" ngf-pattern="'image/*'" id="thumbnail-drop" ng-hide="vmUpdate.video.thumbnailS3url">
+                      Select Thumbnail</div>
+                    <div ngf-no-file-drop>
+                      <button type="button" class="btn btn-warning left" ngf-select="vmUpdate.uploadThumbnail($file)" ng-hide="vmUpdate.video.thumbnailS3url">Select Thumbnail</button>
+                    </div>
+                  </div>
+                  <div class="center" align="center">
+                      <img src="{{vmUpdate.video.thumbnailS3url}}" style="width: 168px" title="Update Thumbnail" ng-show="vmUpdate.video.thumbnailS3url" ngf-select="vmUpdate.uploadThumbnail($file)"/>
+                      <p>&nbsp;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-sm-8 col-xs-8">
+              <div class="row" ng-show="vmUpdate.video.videoS3url && !vmUpdate.processing && !vmUpdate.video.teaserID">
+                <h4>Teaser</h4>
+                <div class="col-md-12">
+                  <input ng-model="vmUpdate.video.teaserStartTime" type="text" placeholder="Teaser Start Time (00.0159)" class="form-control form-group">
+                  <input ng-model="vmUpdate.video.teaserLength" type="text" placeholder="Teaser Length (00.0522)" class="form-control form-group">
+                  <span ng-show="vmUpdate.video.teaserLength > 0">
+                    <a type="button" ng-click="vmUpdate.createTeaser()" class="btn btn-warning">Create Teaser</a><br/><br/>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input ng-model="vmUpdate.video.featureNarrative" type="text" placeholder="Feature Narrative" class="form-control form-group">
+              <input ng-model="vmUpdate.video.synopsis" type="text" placeholder="Synopsis (3 Sentence Max)" class="form-control form-group synopsis-height">
+              <input ng-model="vmUpdate.video.cast" type="text" placeholder="Cast" class="form-control form-group cast-height">
+              <input ng-model="vmUpdate.video.director" type="text" placeholder="Director" class="form-control form-group">
+              <input ng-model="vmUpdate.video.writer" type="text" placeholder="Writer" class="form-control form-group">
+              <input ng-model="vmUpdate.video.producer" type="text" placeholder="Producer" class="form-control form-group">
+              <input ng-model="vmUpdate.video.editor" type="text" placeholder="Editor" class="form-control form-group">
+              <input ng-model="vmUpdate.video.cinematographer" type="text" placeholder="Cinematographer" class="form-control form-group">
+            </div>
+            <div class="col-sm-12 form-group">
+              <div ngf-drop="vmUpdate.uploadCaption($file)" ngf-select="vmUpdate.uploadCaption($file)" ng-model="vmUpdate.video.caption"
+                   class="upload-drop-zone-film" ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="false"
+                   accept="*/*" ngf-pattern="'*/*'">
+                Drop or Click to Upload Closed Caption File</div>
+              <div ngf-no-file-drop>
+                <button type="button" class="btn btn-warning left" ngf-select="vmUpdate.uploadCaption($file)">Select Closed Caption</button>
+              </div>
+              <input ng-model="vmUpdate.video.captionS3url" type="hidden" class="form-control form-group">
+            </div>
+          </div>
+          <div class="container-fluid filmmakers-table">
+            <div class="row">
+              <div class="col-md-12 ffm-well-gray">
+                <h4>FILMMAKERS INVITES</h4>
+                <div class="table-responsive">
+                  <table class="mytable table table-bordred table-ffm">
+                    <thead>
+                    <th class="corners-left">EMAIL</th>
+                      <th class="center">DATE SENT</th>
+                      <th class="center">DATE  COMPLETED</th>
+                      <th class="corners-right">ACTIONS</th>
+                      </thead>
+                    <tbody>
+                      <tr>
+                        <td class="corners-left">some@filmmaker.com</td>
+                        <td align=center>05/05/2016</td>
+                        <td align=center>08/01/2016</td>
+                        <td class="corners-right">
+                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >Remove</button>
+                         </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table>
+                <tr><td><a type="button" ui-sref="index.guest.ffm.festivals.id.film({film_id: vmUpdate.video._id})"
+                           class="btn btn-warning right" ng-show="vmUpdate.video.videoIngested" target="_blank">PREVIEW</a>
+                </td><td>&nbsp;</td>
+                  <td><a type="button" ng-click="vmUpdate.saveFilmVideo(vmUpdate.video, true)"
+                         class="btn btn-warning right" ng-hide="vmUpdate.processing">SAVE</a>
+                    <a type="button" class="btn btn-grey right" ng-show="vmUpdate.processing">
+                      <i class="fa fa-circle-o-notch fa-spin fa-spin-breadcrumb"></i>
+                    </a>
+                  </td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- /End Main container -->
+
+</div>

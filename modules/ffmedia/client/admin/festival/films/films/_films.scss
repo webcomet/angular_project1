@@ -1,0 +1,37 @@
+.filmsFilmsView {
+
+  /*-- START Films page -- Jose
+  ================================================== --*/
+
+  .thumb {
+    margin-top: 15px;
+  }
+
+  .btn-default {
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  /*-- END Films page -- Jose
+  ================================================== --*/
+
+  /* -- Search input Jose-- */
+
+  .ffm_search input[type="text"] {
+    background: $white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    float: left;
+    border: 1px solid $greyE;
+    border-radius: 25px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  /* -- Search input Jose -- */
+}

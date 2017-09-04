@@ -1,0 +1,54 @@
+@import 'assets/scss/variables';
+@import 'assets/scss/fonts';
+@import 'assets/scss/footerDown';
+$fa-font-path: '/lib/font-awesome/fonts';
+@import '../../../public/lib/font-awesome/scss/font-awesome.scss';
+
+.indexView {
+	background: transparent;
+	height: 100%;
+
+	@import 'guest/guest';
+	@import 'admin/admin';
+
+	.glyphicon-spin {
+	    -webkit-animation: spin 1000ms infinite linear;
+	    animation: spin 1000ms infinite linear;
+	}
+	@-webkit-keyframes spin {
+	    0% {
+	        -webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	    }
+	    100% {
+	        -webkit-transform: rotate(359deg);
+	        transform: rotate(359deg);
+	    }
+	}
+	@keyframes spin {
+	    0% {
+	        -webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	    }
+	    100% {
+	        -webkit-transform: rotate(359deg);
+	        transform: rotate(359deg);
+	    }
+	}
+	.btn {
+		&.margin-bottom {
+			margin-bottom: 20px;
+		}
+	}
+}
+/* Select film modal images column */
+.accordion-column{
+  &:nth-child(-4n+9){
+    clear: left;
+  }
+  img{
+    height:auto; 
+    max-width:100%;
+    border-radius: 15px;
+  }
+}

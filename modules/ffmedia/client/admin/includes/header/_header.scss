@@ -1,0 +1,22 @@
+.headerComponent {
+    background: url('/modules/ffmedia/client/assets/img/admin-header-bg.png') no-repeat center/cover;
+    min-height: 60px;
+    color: #FFF;
+
+    /************ Navbar *************/
+    nav.navbar {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+        min-height: 60px;
+        border: none;        
+        border-radius: 0;
+        margin-bottom: 0;
+        padding-left: 75px;
+
+        .navbar-brand {
+            padding: 10px;
+        }
+    }
+    .navbar-nav {
+        margin-top: 4.5px;
+    }
+}

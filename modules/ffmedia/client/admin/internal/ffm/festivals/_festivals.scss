@@ -1,0 +1,26 @@
+.festivalsView {
+
+  .center-block {
+    margin-bottom: 25px;
+  }
+
+  /* -- Search input Jose-- */
+
+  .ffm_search input[type="text"] {
+    background: $white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    float: left;
+    border: 1px solid $greyE;
+    border-radius: 25px;
+    width: 100%;
+    margin:5px 0 5px 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}

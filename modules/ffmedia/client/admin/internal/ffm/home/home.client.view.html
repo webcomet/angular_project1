@@ -1,0 +1,44 @@
+<section class="homeView" ui-view>
+  <!-- Title Bar -->
+  <div class="container-fluid title-bar">
+    <div class="container-fluid ffm-well">
+        <div class="row">
+          <div class="col-lg-9 col-sm-8 col-xs-6">
+            <h3 class="font-ca">
+                INTERNAL > MEDIA
+            </h3>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- /End Title Bar -->
+  <!-- Main container -->
+  <div class="container-fluid">
+    <div class="container-fluid ffm-well">
+      <div class="row">
+        <div class="col-lg-6">
+          <h4>Available Festivals</h4>
+          <input type="text" name="festival-search" id="festival-search" class="festival-search" placeholder="Festival Search" />
+        </div>
+        <div class="col-lg-6">
+          <h4>Selected Festivals</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div ng-controller="AdminInternalMediaController as vmMediaController">
+
+          <div ng-repeat="festival in vmMediaController.festivals.festivalLists" class="col-lg-6">
+            <ul class="festival-select-list">
+              <li ng-repeat="item in festival">
+                <img class="img-responsive img-rounded center-block img-width" src="{{item.img}}" alt="">
+                <h5>{{item.title}}</h5>
+                Location: {{item.location}}
+                <time>{{item.time}}</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
